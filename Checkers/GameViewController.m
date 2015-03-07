@@ -13,10 +13,17 @@
 #import "Common.h"
 #import "GameCollectionViewController.h"
 
+
 @interface GameViewController ()
+@property (strong, nonatomic) IBOutlet UIView *coinSelectorContainerView;
 @property (strong, nonatomic) IBOutlet UIButton *button1;
 @property (strong, nonatomic) IBOutlet UIButton *button2;
 @property (strong, nonatomic) IBOutlet UIView *containerView;
+@property (strong, nonatomic) IBOutlet UIView *player1CoinView;
+@property (strong, nonatomic) IBOutlet UIView *player2CoinView;
+
+// IBActions
+- (IBAction)colorSelectorButtonTapped:(UIButton *)sender;
 
 @end
 
@@ -101,4 +108,28 @@
         [self.containerView addSubview:imageView];
     });*/
 }
+
+#pragma mark - IBActions
+
+- (IBAction)colorSelectorButtonTapped:(UIButton *)sender {
+    self.player1CoinView.layer.cornerRadius = self.player1CoinView.bounds.size.width / 2.0;
+    self.player1CoinView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.player1CoinView.layer.borderWidth = 1.0f;
+    
+    self.player2CoinView.layer.cornerRadius = self.player2CoinView.bounds.size.width / 2.0;
+    self.player2CoinView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.player2CoinView.layer.borderWidth = 1.0f;
+    
+    if ([sender isEqual:self.button1]) {
+        // Button 1 color
+        self.player1CoinView.backgroundColor = self.button1.backgroundColor;
+        self.player2CoinView.backgroundColor = self.button2.backgroundColor;
+    } else {
+        // Button 2 color
+        self.player1CoinView.backgroundColor = self.button2.backgroundColor;
+        self.player2CoinView.backgroundColor = self.button1.backgroundColor;
+    }
+    self.coinSelectorContainerView.hidden = YES;
+}
+
 @end
