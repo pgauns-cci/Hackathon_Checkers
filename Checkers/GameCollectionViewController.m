@@ -34,7 +34,7 @@ static NSString * const reuseIdentifier = @"CustomCell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.collectionView.contentOffset = CGPointMake(0, 0);
+    self.collectionView.contentOffset = CGPointMake(0, -1);
 }
 
 - (void)didReceiveMemoryWarning {
