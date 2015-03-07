@@ -58,7 +58,7 @@
                                                                        minDist:10.0
                                                                         param2:30.0
                                                                     min_radius:1.0
-                                                                    max_radius:40.0];
+                                                                    max_radius:100.0];
         NSLog(@"CaptureGameViewController - checkerCircles count : %lu", (unsigned long)[arrayOfCheckerCircles count]);
         if([arrayOfCheckerCircles count] > 0){
             [houghAlgoDetectedCoins addObject:[NSIndexPath  indexPathForRow:checker.position.x inSection:checker.position.y]];

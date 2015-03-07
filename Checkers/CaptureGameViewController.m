@@ -205,7 +205,7 @@
 - (void)generateCheckerObjects {
     self.arrayOfCheckerObjects = nil;
     self.arrayOfCheckerObjects = [[NSMutableArray alloc] init];
-    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_dark"];;
+    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_light"];;
     int index = 0;
     CGFloat widthOfImage = self.capturedImage.size.width / 8.0f;
     CGFloat heightOfImage = self.capturedImage.size.height / 8.0f;
