@@ -7,6 +7,8 @@
 //
 
 #import "GameCollectionViewController.h"
+#import "CustomCell.h"
+#import "Checker.h"
 
 @interface GameCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -14,7 +16,7 @@
 
 @implementation GameCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"CustomCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 //
     // Do any additional setup after loading the view.
 }
@@ -52,7 +54,10 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    int arrayIndex = indexPath.row + indexPath.section  * 8;
+    Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
+    [cell.image setImage:checker.image];
     return cell;
 }
 

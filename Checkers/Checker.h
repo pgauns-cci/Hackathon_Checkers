@@ -18,5 +18,5 @@
 @property (nonatomic, readwrite) NSInteger index;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *imageWithPadding;
-
+@property (nonatomic, assign) BOOL containsCoin;
 @end

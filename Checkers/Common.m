@@ -14,8 +14,6 @@
 
 @implementation Common
 
-
-
 + (UIImage *)convertImageToGrayScale:(UIImage *)image
 {
     // Create image rectangle with current image width/height
@@ -48,7 +46,6 @@
 
 
 + (UIImage *)convertToBinary:(UIImage *)originalImage {
-    
     originalImage = [originalImage gradientWithIterations:3];
     originalImage = [originalImage sharpen];
     unsigned char *pixelBuffer = [Common getPixelData:originalImage.CGImage];
@@ -187,7 +184,7 @@
     return retImage;
 }
 
-+ (UIImage *) detectImageWithCoin:(UIImage *)image{
++ (UIImage *) highlightImageWithCoin:(UIImage *)image{
     UIImage *binaryImage = [self convertToBinary:image];
     
     if([self imageContainsCoin:binaryImage]){
@@ -229,4 +226,12 @@
     return arrayOfCheckerCircles;
 }
 
++ (BOOL) coinExistInImage:(UIImage *)image{
+    UIImage *binaryImage = [self convertToBinary:image];
+    
+    if([self imageContainsCoin:binaryImage]){
+        return true;
+    }
+    return false;
+}
 @end

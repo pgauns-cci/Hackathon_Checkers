@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GameCollectionViewController : UICollectionViewController
-
+@property (nonatomic, retain) NSMutableArray *checkerObjects;
+@property (nonatomic, retain) UIImage *capturedImage;
 @end

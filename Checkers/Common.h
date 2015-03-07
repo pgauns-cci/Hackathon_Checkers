@@ -30,4 +30,6 @@
                          min_radius:(int)min_radius
                          max_radius:(int)max_radius;
 
++ (UIImage *) highlightImageWithCoin:(UIImage *)image;
++ (BOOL) coinExistInImage:(UIImage *)image;
 @end
