@@ -13,6 +13,7 @@
 		2E0B30191AAAF6E0002EA0EC /* CVCircles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */; };
 		2E0B301A1AAAF6E0002EA0EC /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */; };
 		2E0B301B1AAAF6E0002EA0EC /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30181AAAF6E0002EA0EC /* UIImage+OpenCV.mm */; };
+		2E0B30261AAB0376002EA0EC /* CheckerCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30251AAB0375002EA0EC /* CheckerCircle.m */; };
 		3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */; };
 		3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */; };
 		3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */; };
@@ -54,6 +55,8 @@
 		2E0B30171AAAF6E0002EA0EC /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		2E0B30181AAAF6E0002EA0EC /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
 		2E0B301D1AAAF783002EA0EC /* Checkers.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkers.pch; sourceTree = "<group>"; };
+		2E0B30241AAB0375002EA0EC /* CheckerCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckerCircle.h; sourceTree = "<group>"; };
+		2E0B30251AAB0375002EA0EC /* CheckerCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckerCircle.m; sourceTree = "<group>"; };
 		3C23EAEA1AAAC1530090EFD0 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
 		3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
 		3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				3C23EB021AAAC5120090EFD0 /* Checker.h */,
 				3C23EB031AAAC5120090EFD0 /* Checker.m */,
+				2E0B30241AAB0375002EA0EC /* CheckerCircle.h */,
+				2E0B30251AAB0375002EA0EC /* CheckerCircle.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C23EAFA1AAAC23A0090EFD0 /* Common.m in Sources */,
+				2E0B30261AAB0376002EA0EC /* CheckerCircle.m in Sources */,
 				2E0B300E1AAAE4FA002EA0EC /* GameViewController.m in Sources */,
 				2E0B301A1AAAF6E0002EA0EC /* CVWrapper.mm in Sources */,
 				3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */,
