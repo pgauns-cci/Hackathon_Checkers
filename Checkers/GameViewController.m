@@ -7,10 +7,15 @@
 //
 
 #import "GameViewController.h"
+#import "CVWrapper.h"
+#import "UIImage+vImage.h"
+#import "Checker.h"
+#import "Common.h"
 
 @interface GameViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *button1;
 @property (strong, nonatomic) IBOutlet UIButton *button2;
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
@@ -24,6 +29,8 @@
     
     self.button2.layer.borderColor = [UIColor whiteColor].CGColor;
     self.button2.layer.borderWidth = 2.0f;
+    
+    [self detectCoins];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,4 +46,44 @@
     }
 }
 
+- (void) detectCoins{
+    NSMutableArray *desnsityAlgoDetectedCoins = [[NSMutableArray alloc] init];
+    for (Checker *checker in self.checkerObjects) {
+        if([Common coinExistInImage:checker.image]){
+            //If position detected in the Checker then save its position
+            [desnsityAlgoDetectedCoins addObject:[NSIndexPath  indexPathForRow:checker.position.x inSection:checker.position.y]];
+        }
+    }
+    
+    NSMutableArray *HuffmanAlgoDetectedCoins = [[NSMutableArray alloc] init];
+    
+//    for (Checker *checker in self.checkerObjects) {
+//        
+//        
+//    }
+    
+    UIImage *originalImage = [UIImage imageNamed:@"CheckerBoard_dark"];
+    UIImage *sharpened = [originalImage gradientWithIterations:3];
+    sharpened = [sharpened sharpen];
+    
+    UIImage *binaryImage = [Common convertToBinary:sharpened];
+    
+    UIImage* image =
+    [CVWrapper detectedCirclesInImage:binaryImage
+                                   dp:20
+                              minDist:88
+                               param2:10
+                           min_radius:30
+                           max_radius:44];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGSize checkerSize = CGSizeMake(80, 80);
+        UIImageView *imageView = [[UIImageView alloc]
+                                  initWithFrame:CGRectMake(0,
+                                                           0,
+                                                           700,
+                                                           700)];
+        [imageView setImage:image];
+        [self.containerView addSubview:imageView];
+    });
+}
 @end

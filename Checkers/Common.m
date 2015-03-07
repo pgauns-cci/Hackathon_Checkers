@@ -7,7 +7,6 @@
 //
 
 #import "Common.h"
-#import "UIImage+vImage.h"
 
 @implementation Common
 
@@ -46,8 +45,6 @@
 
 + (UIImage *)convertToBinary:(UIImage *)originalImage {
     
-    originalImage = [originalImage gradientWithIterations:3];
-    originalImage = [originalImage sharpen];
     unsigned char *pixelBuffer = [Common getPixelData:originalImage.CGImage];
     size_t length = originalImage.size.width * originalImage.size.height * 4;
     CGFloat intensity;
@@ -184,7 +181,7 @@
     return retImage;
 }
 
-+ (UIImage *) detectImageWithCoin:(UIImage *)image{
++ (UIImage *) highlightImageWithCoin:(UIImage *)image{
     UIImage *binaryImage = [self convertToBinary:image];
     
     if([self imageContainsCoin:binaryImage]){
@@ -193,4 +190,12 @@
     return binaryImage;
 }
 
++ (BOOL) coinExistInImage:(UIImage *)image{
+    UIImage *binaryImage = [self convertToBinary:image];
+    
+    if([self imageContainsCoin:binaryImage]){
+        return true;
+    }
+    return false;
+}
 @end

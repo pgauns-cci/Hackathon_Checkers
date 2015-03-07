@@ -7,10 +7,12 @@
 //
 
 #import "CaptureGameViewController.h"
-#import "GridView.h"
 #import "UIImage+ImageProcessing.h"
-#import "Checker.h"
 #import "CaptureSessionManager.h"
+#import "GameViewController.h"
+#import "GridView.h"
+#import "Checker.h"
+#import "Common.h"
 
 @interface CaptureGameViewController ()
 
@@ -185,7 +187,6 @@
     
     [self generateCheckerObjects];
     
-    
     //    [self performSegueWithIdentifier:@"showGameViewController" sender:self];
     //GameViewController *vc = [[GameViewController alloc] init];
     //vc.checkerObjects = self.arrayOfCheckerObjects;
@@ -229,4 +230,11 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"GameViewSegue"]) {
+         GameViewController *gameViewController = segue.destinationViewController;
+        gameViewController.checkerObjects = self.arrayOfCheckerObjects;
+    }
+}
 @end

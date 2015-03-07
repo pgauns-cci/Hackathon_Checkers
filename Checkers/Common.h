@@ -15,6 +15,6 @@
 + (UIImage *)convertToBinary:(UIImage *)originalImage;
 
 + (BOOL)saveImage:(UIImage *)image withName:(NSString *)fileNameWithExtension;
-+ (UIImage *) detectImageWithCoin:(UIImage *)image;
-
++ (UIImage *) highlightImageWithCoin:(UIImage *)image;
++ (BOOL) coinExistInImage:(UIImage *)image;
 @end
