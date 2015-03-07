@@ -212,7 +212,7 @@
     for (int y = 0; y < 8; y++) {
         for (int x = 0; x < 8; x++) {
             Checker *checker = [[Checker alloc] init];
-            checker.position = CGPointMake(x, y);
+            checker.position = CheckerPositionMake(x, y);
             checker.index = index;
             checker.image = [self.capturedImage cropImageInFrame:CGRectMake(x * widthOfImage, y * heightOfImage, widthOfImage, heightOfImage)];
             checker.imageWithPadding = [self.capturedImage cropImageInFrame:CGRectMake(x*widthOfImage - widthOfImage*kPaddingPercentage, y*heightOfImage - heightOfImage*kPaddingPercentage, widthOfImage + widthOfImage*kPaddingPercentage*2.0f, heightOfImage + heightOfImage*kPaddingPercentage*2.0f)];

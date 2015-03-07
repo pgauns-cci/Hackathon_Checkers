@@ -15,12 +15,19 @@
 
 
 @interface GameViewController ()
+
 @property (strong, nonatomic) IBOutlet UIView *coinSelectorContainerView;
 @property (strong, nonatomic) IBOutlet UIButton *button1;
 @property (strong, nonatomic) IBOutlet UIButton *button2;
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 @property (strong, nonatomic) IBOutlet UIView *player1CoinView;
 @property (strong, nonatomic) IBOutlet UIView *player2CoinView;
+
+@property (nonatomic, strong) UIColor *firstCellColor;
+@property (nonatomic, strong) UIColor *secondCellColor;
+
+@property (nonatomic, strong) UIColor *player1CoinColor;
+@property (nonatomic, strong) UIColor *player2CoinColor;
 
 // IBActions
 - (IBAction)colorSelectorButtonTapped:(UIButton *)sender;
@@ -50,16 +57,22 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"CheckerBoardSegue"]) {
+        [self detectCoins];
         GameCollectionViewController *gameCollectionViewController = segue.destinationViewController;
         gameCollectionViewController.checkerObjects = self.checkerObjects;
         gameCollectionViewController.capturedImage = self.capturedImage;
+        gameCollectionViewController.firstCellColor = self.firstCellColor;
+        gameCollectionViewController.secondCellColor = self.secondCellColor;
 
     }
 }
 
-- (void) detectCoins{
+- (void)detectCoins {
+    
     NSMutableArray *houghAlgoDetectedCoins = [[NSMutableArray alloc] init];
+    
     for (Checker *checker in self.checkerObjects) {
+        
         NSMutableArray *arrayOfCheckerCircles = [Common detectedCirclesInImage:[Common convertToBinary:checker.imageWithPadding]
                                                                             dp:1.0
                                                                        minDist:10.0
@@ -67,9 +80,18 @@
                                                                     min_radius:1.0
                                                                     max_radius:100.0];
         NSLog(@"CaptureGameViewController - checkerCircles count : %lu", (unsigned long)[arrayOfCheckerCircles count]);
-        if([arrayOfCheckerCircles count] > 0){
-            [houghAlgoDetectedCoins addObject:[NSIndexPath  indexPathForRow:checker.position.x inSection:checker.position.y]];
+        
+        if ([arrayOfCheckerCircles count] > 0){
+            // Coin - Found
+            [houghAlgoDetectedCoins addObject:[NSIndexPath  indexPathForRow:checker.position.row inSection:checker.position.column]];
             checker.containsCoin = true;
+        } else {
+            // Coin - Not Found
+            if ((checker.position.row + checker.position.column) %2 == 0) {
+                self.firstCellColor = [Common colorAtPixel:CGPointMake(checker.image.size.width/2, checker.image.size.height/2) :checker.image];
+            } else {
+                self.secondCellColor = [Common colorAtPixel:CGPointMake(checker.image.size.width/2, checker.image.size.height/2) :checker.image];
+            }
         }
     }
     

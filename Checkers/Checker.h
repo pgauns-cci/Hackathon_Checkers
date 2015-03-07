@@ -12,9 +12,23 @@
 
 #define kPaddingPercentage 0.10f
 
+struct CheckerPosition {
+    int row;
+    int column;
+};
+typedef struct CheckerPosition CheckerPosition;
+
+static inline CheckerPosition
+CheckerPositionMake(int row, int column) {
+    CheckerPosition checkerPosition;
+    checkerPosition.row = row;
+    checkerPosition.column = column;
+    return checkerPosition;
+}
+
 @interface Checker : NSObject
 
-@property (nonatomic, readwrite) CGPoint position;
+@property (nonatomic, readwrite) CheckerPosition position;
 @property (nonatomic, readwrite) NSInteger index;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *imageWithPadding;

@@ -59,7 +59,16 @@ static NSString * const reuseIdentifier = @"CustomCell";
     Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
     cell.checker = checker;
     //[cell.image setImage:checker.image];
-    return cell;
+    
+    
+    if (((indexPath.row + indexPath.section) %2) == 0) {
+        // Display first cell color
+        cell.backgroundColor = self.firstCellColor;
+    } else {
+        // Display second cell color
+        cell.backgroundColor = self.secondCellColor;
+    }
+     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate Methods
