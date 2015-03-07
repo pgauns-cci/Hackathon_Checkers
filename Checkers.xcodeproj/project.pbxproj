@@ -172,6 +172,9 @@
 		3C23EAF61AAAC1DA0090EFD0 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C23EB291AAB5D560090EFD0 /* CustomCell.h */,
+				3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */,
+				3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */,
 				3C23EB051AAAC54B0090EFD0 /* GridView.h */,
 				3C23EB061AAAC54B0090EFD0 /* GridView.m */,
 			);
@@ -252,9 +255,6 @@
 		3CB204F61AA9D43400429A05 /* Checkers */ = {
 			isa = PBXGroup;
 			children = (
-				3C23EB291AAB5D560090EFD0 /* CustomCell.h */,
-				3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */,
-				3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */,
 				3C23EB011AAAC4FD0090EFD0 /* Helper Classes */,
 				3C23EB001AAAC4A70090EFD0 /* UI */,
 				3C23EAFF1AAAC48B0090EFD0 /* ViewControllers */,
