@@ -13,6 +13,34 @@
 #import "Common.h"
 #import "GameCollectionViewController.h"
 
+@interface ColorComponents : NSObject 
+
+@property (nonatomic, readwrite) int red;
+@property (nonatomic, readwrite) int green;
+@property (nonatomic, readwrite) int blue;
+
++ (ColorComponents *)colorComponentsFromColor:(UIColor *)color;
+
+@end
+
+@implementation ColorComponents
+
++ (ColorComponents *)colorComponentsFromColor:(UIColor *)color {
+    
+    ColorComponents *colorComponents = nil;
+    CGColorRef colorRef = [color CGColor];
+    int _countComponents = CGColorGetNumberOfComponents(colorRef);
+    if (_countComponents == 4) {
+        const CGFloat *_components = CGColorGetComponents(colorRef);
+        colorComponents = [[ColorComponents alloc] init];
+        colorComponents.red = (int)((CGFloat)_components[0] * 255.0f);
+        colorComponents.green = (int)((CGFloat)_components[1] * 255.0f);
+        colorComponents.blue = (int)((CGFloat)_components[2] * 255.0f);
+    }
+    return colorComponents;
+}
+
+@end
 
 @interface GameViewController ()
 
@@ -39,13 +67,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self detectCoins];
+    
     self.button1.layer.borderColor = [UIColor whiteColor].CGColor;
     self.button1.layer.borderWidth = 2.0f;
+    self.button1.backgroundColor = self.player1CoinColor;
     
     self.button2.layer.borderColor = [UIColor whiteColor].CGColor;
     self.button2.layer.borderWidth = 2.0f;
-    
-    [self detectCoins];
+    self.button2.backgroundColor = self.player2CoinColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,6 +94,8 @@
         gameCollectionViewController.firstCellColor = self.firstCellColor;
         gameCollectionViewController.secondCellColor = self.secondCellColor;
 
+        gameCollectionViewController.player1CoinColor = self.player1CoinColor;
+        gameCollectionViewController.player2CoinColor = self.player2CoinColor;
     }
 }
 
@@ -96,6 +128,8 @@
     }
     
     NSLog(@"CaptureGameViewController - checkDetectedCheckWithCircles count : %lu", (unsigned long)[houghAlgoDetectedCoins count]);
+    
+    [self findCheckerCoinColors];
     /*
     
      NSMutableArray *desnsityAlgoDetectedCoins = [[NSMutableArray alloc] init];
@@ -129,6 +163,40 @@
         [imageView setImage:image];
         [self.containerView addSubview:imageView];
     });*/
+}
+
+
+- (void)findCheckerCoinColors {
+    
+    for (Checker *checker in self.checkerObjects) {
+        if (!checker.containsCoin) {
+            continue;
+        }
+        
+        UIColor *colorOfPixelAtCenter = [Common colorAtPixel:CGPointMake(checker.image.size.width/2, checker.image.size.height/2) :checker.image];
+        
+        if (!self.player1CoinColor) {
+            self.player1CoinColor = colorOfPixelAtCenter;
+            checker.checkerPlayer = CheckerPlayer1;
+            continue;
+        } else {
+            // Get RGB components
+            ColorComponents *currentColorComponents = [ColorComponents colorComponentsFromColor:colorOfPixelAtCenter];
+            ColorComponents *player1CoinColorComponent  = [ColorComponents colorComponentsFromColor:self.player1CoinColor];
+            
+            if (abs(currentColorComponents.red - player1CoinColorComponent.red) <=10 &&
+                abs(currentColorComponents.green - player1CoinColorComponent.green) <= 10 &&
+                abs(currentColorComponents.blue - player1CoinColorComponent.blue) <= 10) {
+                checker.checkerPlayer = CheckerPlayer1;
+                continue;
+            } else {
+//                if (!self.player2CoinColor) {
+                    self.player2CoinColor = colorOfPixelAtCenter;
+                    checker.checkerPlayer = CheckerPlayer2;
+//                }
+            }
+        }
+    }
 }
 
 #pragma mark - IBActions

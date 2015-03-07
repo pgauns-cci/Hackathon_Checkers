@@ -13,5 +13,6 @@
 
 @property (nonatomic, retain) Checker     *checker;
 @property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (nonatomic, strong) UIColor *coinColor;
 
 @end

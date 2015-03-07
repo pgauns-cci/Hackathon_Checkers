@@ -58,8 +58,12 @@ static NSString * const reuseIdentifier = @"CustomCell";
     int arrayIndex = indexPath.row + indexPath.section  * 8;
     Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
     cell.checker = checker;
+    if (checker.checkerPlayer == 1) {
+        cell.coinColor = self.player1CoinColor;
+    } else if (checker.checkerPlayer == 2) {
+        cell.coinColor = self.player2CoinColor;
+    }
     //[cell.image setImage:checker.image];
-    
     
     if (((indexPath.row + indexPath.section) %2) == 0) {
         // Display first cell color

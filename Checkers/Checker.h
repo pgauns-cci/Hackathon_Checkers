@@ -26,6 +26,11 @@ CheckerPositionMake(int row, int column) {
     return checkerPosition;
 }
 
+typedef enum CheckerPlayer {
+    CheckerPlayer1 = 1,
+    CheckerPlayer2 = 2
+} CheckerPlayer;
+
 @interface Checker : NSObject
 
 @property (nonatomic, readwrite) CheckerPosition position;
@@ -33,4 +38,6 @@ CheckerPositionMake(int row, int column) {
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *imageWithPadding;
 @property (nonatomic, assign) BOOL containsCoin;
+@property (nonatomic, readwrite) CheckerPlayer checkerPlayer;
+
 @end
