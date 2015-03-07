@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */; };
+		3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */; };
+		3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */; };
+		3C23EAF41AAAC1900090EFD0 /* CheckerBoard_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */; };
+		3C23EAFA1AAAC23A0090EFD0 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAF91AAAC23A0090EFD0 /* Common.m */; };
+		3C23EAFE1AAAC4470090EFD0 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAFD1AAAC4470090EFD0 /* CaptureSessionManager.m */; };
+		3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB031AAAC5120090EFD0 /* Checker.m */; };
+		3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB061AAAC54B0090EFD0 /* GridView.m */; };
+		3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB091AAAC5C00090EFD0 /* UIImage+ImageProcessing.m */; };
 		3CB204FA1AA9D43400429A05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204F91AA9D43400429A05 /* main.m */; };
 		3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FC1AA9D43400429A05 /* AppDelegate.m */; };
-		3CB205001AA9D43400429A05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FF1AA9D43400429A05 /* ViewController.m */; };
+		3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */; };
 		3CB205031AA9D43400429A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB205011AA9D43400429A05 /* Main.storyboard */; };
 		3CB205051AA9D43400429A05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CB205041AA9D43400429A05 /* Images.xcassets */; };
 		3CB205081AA9D43400429A05 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB205061AA9D43400429A05 /* LaunchScreen.xib */; };
@@ -27,13 +36,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C23EAEA1AAAC1530090EFD0 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
+		3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
+		3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
+		3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
+		3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard_dark.png; sourceTree = "<group>"; };
+		3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard_light.png; sourceTree = "<group>"; };
+		3C23EAF81AAAC23A0090EFD0 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		3C23EAF91AAAC23A0090EFD0 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		3C23EAFC1AAAC4470090EFD0 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		3C23EAFD1AAAC4470090EFD0 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		3C23EB021AAAC5120090EFD0 /* Checker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checker.h; sourceTree = "<group>"; };
+		3C23EB031AAAC5120090EFD0 /* Checker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checker.m; sourceTree = "<group>"; };
+		3C23EB051AAAC54B0090EFD0 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		3C23EB061AAAC54B0090EFD0 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		3C23EB081AAAC5C00090EFD0 /* UIImage+ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageProcessing.h"; sourceTree = "<group>"; };
+		3C23EB091AAAC5C00090EFD0 /* UIImage+ImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageProcessing.m"; sourceTree = "<group>"; };
 		3CB204F41AA9D43400429A05 /* Checkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB204F81AA9D43400429A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB204F91AA9D43400429A05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3CB204FB1AA9D43400429A05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3CB204FC1AA9D43400429A05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3CB204FE1AA9D43400429A05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3CB204FF1AA9D43400429A05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3CB204FE1AA9D43400429A05 /* CaptureGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureGameViewController.h; sourceTree = "<group>"; };
+		3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureGameViewController.m; sourceTree = "<group>"; };
 		3CB205021AA9D43400429A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CB205041AA9D43400429A05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3CB205071AA9D43400429A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -60,6 +85,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C23EAE81AAAC1530090EFD0 /* Library-Image processing */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EAE91AAAC1530090EFD0 /* UIImage+blend */,
+				3C23EAEC1AAAC1530090EFD0 /* UIImage+vImage */,
+				3C23EB081AAAC5C00090EFD0 /* UIImage+ImageProcessing.h */,
+				3C23EB091AAAC5C00090EFD0 /* UIImage+ImageProcessing.m */,
+			);
+			name = "Library-Image processing";
+			path = libs;
+			sourceTree = "<group>";
+		};
+		3C23EAE91AAAC1530090EFD0 /* UIImage+blend */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EAEA1AAAC1530090EFD0 /* UIImage+Blend.h */,
+				3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */,
+			);
+			path = "UIImage+blend";
+			sourceTree = "<group>";
+		};
+		3C23EAEC1AAAC1530090EFD0 /* UIImage+vImage */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */,
+				3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */,
+			);
+			path = "UIImage+vImage";
+			sourceTree = "<group>";
+		};
+		3C23EAF51AAAC19B0090EFD0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */,
+				3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		3C23EAF61AAAC1DA0090EFD0 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EB051AAAC54B0090EFD0 /* GridView.h */,
+				3C23EB061AAAC54B0090EFD0 /* GridView.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3C23EAF71AAAC2090090EFD0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EAF81AAAC23A0090EFD0 /* Common.h */,
+				3C23EAF91AAAC23A0090EFD0 /* Common.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		3C23EAFB1AAAC4340090EFD0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EAFC1AAAC4470090EFD0 /* CaptureSessionManager.h */,
+				3C23EAFD1AAAC4470090EFD0 /* CaptureSessionManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		3C23EAFF1AAAC48B0090EFD0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CB204FE1AA9D43400429A05 /* CaptureGameViewController.h */,
+				3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3C23EB001AAAC4A70090EFD0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3CB205011AA9D43400429A05 /* Main.storyboard */,
+				3CB205061AA9D43400429A05 /* LaunchScreen.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		3C23EB011AAAC4FD0090EFD0 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3C23EB021AAAC5120090EFD0 /* Checker.h */,
+				3C23EB031AAAC5120090EFD0 /* Checker.m */,
+			);
+			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
 		3CB204EB1AA9D43400429A05 = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +199,17 @@
 		3CB204F61AA9D43400429A05 /* Checkers */ = {
 			isa = PBXGroup;
 			children = (
+				3C23EB011AAAC4FD0090EFD0 /* Helper Classes */,
+				3C23EB001AAAC4A70090EFD0 /* UI */,
+				3C23EAFF1AAAC48B0090EFD0 /* ViewControllers */,
+				3C23EAFB1AAAC4340090EFD0 /* Managers */,
+				3C23EAF71AAAC2090090EFD0 /* Utility */,
+				3C23EAF61AAAC1DA0090EFD0 /* Custom Views */,
+				3C23EAF51AAAC19B0090EFD0 /* Assets */,
+				3C23EAE81AAAC1530090EFD0 /* Library-Image processing */,
 				3CB204FB1AA9D43400429A05 /* AppDelegate.h */,
 				3CB204FC1AA9D43400429A05 /* AppDelegate.m */,
-				3CB204FE1AA9D43400429A05 /* ViewController.h */,
-				3CB204FF1AA9D43400429A05 /* ViewController.m */,
-				3CB205011AA9D43400429A05 /* Main.storyboard */,
 				3CB205041AA9D43400429A05 /* Images.xcassets */,
-				3CB205061AA9D43400429A05 /* LaunchScreen.xib */,
 				3CB204F71AA9D43400429A05 /* Supporting Files */,
 			);
 			path = Checkers;
@@ -201,6 +323,8 @@
 			files = (
 				3CB205031AA9D43400429A05 /* Main.storyboard in Resources */,
 				3CB205081AA9D43400429A05 /* LaunchScreen.xib in Resources */,
+				3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */,
+				3C23EAF41AAAC1900090EFD0 /* CheckerBoard_light.png in Resources */,
 				3CB205051AA9D43400429A05 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +343,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CB205001AA9D43400429A05 /* ViewController.m in Sources */,
+				3C23EAFA1AAAC23A0090EFD0 /* Common.m in Sources */,
+				3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */,
+				3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */,
+				3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */,
 				3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */,
+				3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */,
 				3CB204FA1AA9D43400429A05 /* main.m in Sources */,
+				3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */,
+				3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */,
+				3C23EAFE1AAAC4470090EFD0 /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +545,7 @@
 				3CB205191AA9D43400429A05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CB2051A1AA9D43400429A05 /* Build configuration list for PBXNativeTarget "CheckersTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +554,7 @@
 				3CB2051C1AA9D43400429A05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
