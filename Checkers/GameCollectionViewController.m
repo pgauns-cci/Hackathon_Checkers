@@ -57,7 +57,8 @@ static NSString * const reuseIdentifier = @"CustomCell";
     CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     int arrayIndex = indexPath.row + indexPath.section  * 8;
     Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
-    [cell.image setImage:checker.image];
+    cell.checker = checker;
+    //[cell.image setImage:checker.image];
     return cell;
 }
 

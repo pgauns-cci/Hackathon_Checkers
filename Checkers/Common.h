@@ -32,4 +32,5 @@
 
 + (UIImage *) highlightImageWithCoin:(UIImage *)image;
 + (BOOL) coinExistInImage:(UIImage *)image;
++ (UIColor *)colorAtPixel:(CGPoint)point :(UIImage *)image;
 @end

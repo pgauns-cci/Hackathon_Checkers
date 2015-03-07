@@ -63,7 +63,7 @@
                                                                    minDist:10.0
                                                                     param2:30.0
                                                                 min_radius:1.0
-                                                                max_radius:40.0];
+                                                                max_radius:120.0];
     NSLog(@"CaptureGameViewController - checkerCircles count : %d", [arrayOfCheckerCircles count]);
 }
 
@@ -205,7 +205,7 @@
 - (void)generateCheckerObjects {
     self.arrayOfCheckerObjects = nil;
     self.arrayOfCheckerObjects = [[NSMutableArray alloc] init];
-    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_light"];;
+    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_dark"];;
     int index = 0;
     CGFloat widthOfImage = self.capturedImage.size.width / 8.0f;
     CGFloat heightOfImage = self.capturedImage.size.height / 8.0f;

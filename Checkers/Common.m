@@ -234,4 +234,48 @@
     }
     return false;
 }
+
++ (UIColor *)colorAtPixel:(CGPoint)point :(UIImage *)image{
+    // Cancel if the point is outside of the image coordinates
+    if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, image.size.width, image.size.height), point)) {
+        return nil;
+    }
+    
+    // Create a 1x1 pixel byte array and bitmap context to draw the pixel onto.
+    // Reference: http://stackoverflow.com/questions/1042830/retrieving-a-pixel-alpha-value-for-a-uiimage
+    NSInteger pointX = trunc(point.x);
+    NSInteger pointY = trunc(point.y);
+    
+    CGImageRef cgImage = image.CGImage;
+    
+    NSUInteger width = CGImageGetWidth(cgImage);
+    NSUInteger height = CGImageGetHeight(cgImage);
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    int bytesPerPixel = 4;
+    int bytesPerRow = bytesPerPixel * 1;
+    NSUInteger bitsPerComponent = 8;
+    
+    unsigned char pixelData[4] = { 0, 0, 0, 0 };
+    
+    CGContextRef context = CGBitmapContextCreate( pixelData, 1, 1, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    
+    CGColorSpaceRelease(colorSpace);
+    
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
+    
+    // Draw the pixel we are interested in
+    CGContextTranslateCTM(context, -pointX, -pointY);
+    CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, (CGFloat)width, (CGFloat)height), cgImage);
+    CGContextRelease(context);
+    
+    // Convert the color values [0...255] to floats [0.0f...1.0f]
+    CGFloat r = (CGFloat)pixelData[0] / 255.0f;
+    CGFloat g = (CGFloat)pixelData[1] / 255.0f;
+    CGFloat b = (CGFloat)pixelData[2] / 255.0f;
+    CGFloat a = (CGFloat)pixelData[3] / 255.0f;
+    
+    return [UIColor colorWithRed:r green:g blue:b alpha:a];
+}
 @end

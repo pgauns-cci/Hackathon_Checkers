@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Checker.h"
 
 @interface CustomCell : UICollectionViewCell
 
-@property (nonatomic, assign) NSInteger     indexPath;
+@property (nonatomic, retain) Checker     *checker;
 @property (strong, nonatomic) IBOutlet UIImageView *image;
-
-- (void) initGestures;
-- (void) setCellColor:(UIColor *)cellColor;
 
 @end
