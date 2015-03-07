@@ -1,0 +1,72 @@
+//
+//  GameCollectionViewController.m
+//  HackathonChecker
+//
+//  Created by Vinnie Da Silva on 06/03/15.
+//  Copyright (c) 2015 Creative capsule Infotech. All rights reserved.
+//
+
+#import "GameCollectionViewController.h"
+
+@interface GameCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@end
+
+@implementation GameCollectionViewController
+
+static NSString * const reuseIdentifier = @"Cell";
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+    
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Register cell classes
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//
+    // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.collectionView.contentOffset = CGPointMake(0, 0);
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UICollectionViewDataSource Methods
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 8;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 8;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate Methods
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    cell.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.layer.borderWidth = 0.5f;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    cell.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.layer.borderWidth = 0.5f;
+}
+
+@end

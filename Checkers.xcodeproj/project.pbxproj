@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E0B300B1AAAD4A0002EA0EC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0B300A1AAAD4A0002EA0EC /* opencv2.framework */; };
+		2E0B300E1AAAE4FA002EA0EC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */; };
+		2E0B30111AAAE5F4002EA0EC /* GameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */; };
 		3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */; };
 		3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */; };
 		3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */; };
@@ -38,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		2E0B300A1AAAD4A0002EA0EC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		2E0B300C1AAAE4FA002EA0EC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		2E0B300F1AAAE5F4002EA0EC /* GameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCollectionViewController.h; sourceTree = "<group>"; };
+		2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCollectionViewController.m; sourceTree = "<group>"; };
 		3C23EAEA1AAAC1530090EFD0 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
 		3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
 		3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
@@ -158,8 +164,12 @@
 		3C23EAFF1AAAC48B0090EFD0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2E0B300C1AAAE4FA002EA0EC /* GameViewController.h */,
+				2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */,
 				3CB204FE1AA9D43400429A05 /* CaptureGameViewController.h */,
 				3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */,
+				2E0B300F1AAAE5F4002EA0EC /* GameCollectionViewController.h */,
+				2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -348,10 +358,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C23EAFA1AAAC23A0090EFD0 /* Common.m in Sources */,
+				2E0B300E1AAAE4FA002EA0EC /* GameViewController.m in Sources */,
 				3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */,
 				3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */,
 				3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */,
 				3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */,
+				2E0B30111AAAE5F4002EA0EC /* GameCollectionViewController.m in Sources */,
 				3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */,
 				3CB204FA1AA9D43400429A05 /* main.m in Sources */,
 				3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */,

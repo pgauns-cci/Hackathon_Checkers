@@ -26,6 +26,7 @@
 
 // IBActions
 - (IBAction)handleSingleTapGesture:(id)sender;
+- (IBAction)nextButtonTapped:(UIBarButtonItem *)sender;
 
 // Private Methods
 - (void)configureCaptureManager;
@@ -126,6 +127,11 @@
 - (IBAction)handleSingleTapGesture:(id)sender {
     self.isCapturingGame = !self.isCapturingGame;
     
+}
+
+- (IBAction)nextButtonTapped:(UIBarButtonItem *)sender {
+    [self generateCheckerObjects];
+    [self performSegueWithIdentifier:@"GameViewSegue" sender:nil];
 }
 
 #pragma mark - Private Methods
