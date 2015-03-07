@@ -10,8 +10,13 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
+#define kPaddingPercentage 0.10f
+
 @interface Checker : NSObject
+
 @property (nonatomic, readwrite) CGPoint position;
 @property (nonatomic, readwrite) NSInteger index;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) UIImage *imageWithPadding;
+
 @end
