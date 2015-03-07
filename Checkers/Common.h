@@ -17,4 +17,17 @@
 + (BOOL)saveImage:(UIImage *)image withName:(NSString *)fileNameWithExtension;
 + (UIImage *) detectImageWithCoin:(UIImage *)image;
 
+// Circle Detection using OpenCV
+
+// Returns array of CheckerCircle objects
++ (NSMutableArray*) detectedCirclesInImage:(UIImage*)image;
+
+// Returns array of CheckerCircle objects
++ (NSMutableArray*) detectedCirclesInImage:(UIImage*)image
+                                 dp:(CGFloat)dp
+                            minDist:(CGFloat)minDist
+                             param2:(CGFloat)param2
+                         min_radius:(int)min_radius
+                         max_radius:(int)max_radius;
+
 @end

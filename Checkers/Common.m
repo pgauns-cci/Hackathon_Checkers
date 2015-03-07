@@ -8,6 +8,9 @@
 
 #import "Common.h"
 #import "UIImage+vImage.h"
+#import "CVWrapper.h"
+#import "DetectedCheckerCircle.h"
+#import "CheckerCircle.h"
 
 @implementation Common
 
@@ -191,6 +194,39 @@
         binaryImage = [self drawCircleOverImage:binaryImage];
     }
     return binaryImage;
+}
+
++ (NSMutableArray*) detectedCirclesInImage:(UIImage*)image {
+    [CVWrapper detectedCirclesInImage:image];
+    NSMutableArray *arrayOfCheckerCircles = [DetectedCheckerCircle sharedDetectedCheckerCircle].arrayOfCheckerCircles;
+    
+    // Testing purpose
+    for (CheckerCircle *checkerCircle in arrayOfCheckerCircles) {
+        NSLog(@"CheckerCircle :   %@", checkerCircle.description);
+    }
+    return arrayOfCheckerCircles;
+}
+
++ (NSMutableArray*) detectedCirclesInImage:(UIImage*)image
+                                        dp:(CGFloat)dp
+                                   minDist:(CGFloat)minDist
+                                    param2:(CGFloat)param2
+                                min_radius:(int)min_radius
+                                max_radius:(int)max_radius {
+    [CVWrapper detectedCirclesInImage:image
+                                   dp:dp
+                              minDist:minDist
+                               param2:param2
+                           min_radius:min_radius
+                           max_radius:max_radius];
+    
+    NSMutableArray *arrayOfCheckerCircles = [DetectedCheckerCircle sharedDetectedCheckerCircle].arrayOfCheckerCircles;
+    
+    // Testing purpose
+    for (CheckerCircle *checkerCircle in arrayOfCheckerCircles) {
+        NSLog(@"CheckerCircle :   %@", checkerCircle.description);
+    }
+    return arrayOfCheckerCircles;
 }
 
 @end

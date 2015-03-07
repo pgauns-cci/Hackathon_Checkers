@@ -11,6 +11,7 @@
 #import "UIImage+ImageProcessing.h"
 #import "Checker.h"
 #import "CaptureSessionManager.h"
+#import "Common.h"
 
 @interface CaptureGameViewController ()
 
@@ -56,6 +57,13 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSMutableArray *arrayOfCheckerCircles = [Common detectedCirclesInImage:[UIImage imageNamed:@"CheckerBoard_dark.png"]
+                                                                        dp:1.0
+                                                                   minDist:10.0
+                                                                    param2:30.0
+                                                                min_radius:1.0
+                                                                max_radius:30.0];
+    NSLog(@"CaptureGameViewController - checkerCircles count : %d", [arrayOfCheckerCircles count]);
 }
 
 - (void)viewDidLayoutSubviews {
