@@ -1,0 +1,21 @@
+//
+//  Checkers.pch
+//  Checkers
+//
+//  Created by Vinnie Da Silva on 07/03/15.
+//  Copyright (c) 2015 VP. All rights reserved.
+//
+
+#ifndef Checkers_Checkers_pch
+#define Checkers_Checkers_pch
+
+#endif
+
+#ifdef __cplusplus
+#import <opencv2/opencv.hpp>
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif

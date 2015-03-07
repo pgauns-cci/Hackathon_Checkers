@@ -10,6 +10,9 @@
 		2E0B300B1AAAD4A0002EA0EC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0B300A1AAAD4A0002EA0EC /* opencv2.framework */; };
 		2E0B300E1AAAE4FA002EA0EC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */; };
 		2E0B30111AAAE5F4002EA0EC /* GameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */; };
+		2E0B30191AAAF6E0002EA0EC /* CVCircles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */; };
+		2E0B301A1AAAF6E0002EA0EC /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */; };
+		2E0B301B1AAAF6E0002EA0EC /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30181AAAF6E0002EA0EC /* UIImage+OpenCV.mm */; };
 		3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */; };
 		3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */; };
 		3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */; };
@@ -44,6 +47,13 @@
 		2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		2E0B300F1AAAE5F4002EA0EC /* GameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCollectionViewController.h; sourceTree = "<group>"; };
 		2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCollectionViewController.m; sourceTree = "<group>"; };
+		2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CVCircles.cpp; sourceTree = "<group>"; };
+		2E0B30141AAAF6E0002EA0EC /* CVCircles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCircles.h; sourceTree = "<group>"; };
+		2E0B30151AAAF6E0002EA0EC /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
+		2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
+		2E0B30171AAAF6E0002EA0EC /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		2E0B30181AAAF6E0002EA0EC /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		2E0B301D1AAAF783002EA0EC /* Checkers.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkers.pch; sourceTree = "<group>"; };
 		3C23EAEA1AAAC1530090EFD0 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
 		3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
 		3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
@@ -94,9 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0B30121AAAF6E0002EA0EC /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */,
+				2E0B30141AAAF6E0002EA0EC /* CVCircles.h */,
+				2E0B30151AAAF6E0002EA0EC /* CVWrapper.h */,
+				2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */,
+				2E0B30171AAAF6E0002EA0EC /* UIImage+OpenCV.h */,
+				2E0B30181AAAF6E0002EA0EC /* UIImage+OpenCV.mm */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
 		3C23EAE81AAAC1530090EFD0 /* Library-Image processing */ = {
 			isa = PBXGroup;
 			children = (
+				2E0B30121AAAF6E0002EA0EC /* cpp */,
 				2E0B300A1AAAD4A0002EA0EC /* opencv2.framework */,
 				3C23EAE91AAAC1530090EFD0 /* UIImage+blend */,
 				3C23EAEC1AAAC1530090EFD0 /* UIImage+vImage */,
@@ -232,6 +256,7 @@
 		3CB204F71AA9D43400429A05 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2E0B301D1AAAF783002EA0EC /* Checkers.pch */,
 				3CB204F81AA9D43400429A05 /* Info.plist */,
 				3CB204F91AA9D43400429A05 /* main.m */,
 			);
@@ -359,7 +384,9 @@
 			files = (
 				3C23EAFA1AAAC23A0090EFD0 /* Common.m in Sources */,
 				2E0B300E1AAAE4FA002EA0EC /* GameViewController.m in Sources */,
+				2E0B301A1AAAF6E0002EA0EC /* CVWrapper.mm in Sources */,
 				3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */,
+				2E0B301B1AAAF6E0002EA0EC /* UIImage+OpenCV.mm in Sources */,
 				3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */,
 				3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */,
 				3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */,
@@ -367,6 +394,7 @@
 				3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */,
 				3CB204FA1AA9D43400429A05 /* main.m in Sources */,
 				3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */,
+				2E0B30191AAAF6E0002EA0EC /* CVCircles.cpp in Sources */,
 				3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */,
 				3C23EAFE1AAAC4470090EFD0 /* CaptureSessionManager.m in Sources */,
 			);
@@ -496,6 +524,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Checkers/libs",
 				);
+				GCC_PREFIX_HEADER = Checkers/Checkers.pch;
 				INFOPLIST_FILE = Checkers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -510,6 +539,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Checkers/libs",
 				);
+				GCC_PREFIX_HEADER = Checkers/Checkers.pch;
 				INFOPLIST_FILE = Checkers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
