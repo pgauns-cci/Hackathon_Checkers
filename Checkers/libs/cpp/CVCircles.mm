@@ -13,6 +13,8 @@
 //
 
 #include "CVCircles.h"
+#import "CheckerCircle.h"
+#import "DetectedCheckerCircle.h"
 
     //#include <iostream>
 
@@ -76,14 +78,24 @@ cv::Mat CVCircles::detectedCirclesInImage
      The function finds circles in a grayscale image using a modification of the Hough transform.
      */
     
+    NSMutableArray *arrayOfCheckerCircles = [[NSMutableArray alloc] init];
+    
     for( size_t i = 0; i < circles.size(); i++ )
         {
         Vec3i c = circles[i];
-        circle( cimg, Point(c[0], c[1]), c[2], Scalar(255,0,0), 3, CV_AA);
-        circle( cimg, Point(c[0], c[1]), 2, Scalar(0,255,0), 3, CV_AA);
+            circle( cimg, cv::Point(c[0], c[1]), c[2], Scalar(255,0,0), 3, CV_AA);
+            circle( cimg, cv::Point(c[0], c[1]), 2, Scalar(0,255,0), 3, CV_AA);
+            
+            // Create the CheckerCircleObject (Obj-C)
+            CheckerCircle *checkerCircle = [[CheckerCircle alloc] init];
+            checkerCircle.radius = c[2];
+            checkerCircle.center = CGPointMake(c[0], c[1]);
+            [arrayOfCheckerCircles addObject:checkerCircle];
         }
     
-    
+    DetectedCheckerCircle *sharedDetectedCheckerCircle = [DetectedCheckerCircle sharedDetectedCheckerCircle];
+    [sharedDetectedCheckerCircle.arrayOfCheckerCircles removeAllObjects];
+    sharedDetectedCheckerCircle.arrayOfCheckerCircles = arrayOfCheckerCircles;
     return cimg;
 }
 

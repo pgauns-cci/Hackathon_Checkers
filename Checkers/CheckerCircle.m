@@ -10,4 +10,8 @@
 
 @implementation CheckerCircle
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"radius - %f,  center - %@", self.radius, NSStringFromCGPoint(self.center)];
+}
+
 @end

@@ -10,10 +10,11 @@
 		2E0B300B1AAAD4A0002EA0EC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0B300A1AAAD4A0002EA0EC /* opencv2.framework */; };
 		2E0B300E1AAAE4FA002EA0EC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */; };
 		2E0B30111AAAE5F4002EA0EC /* GameCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */; };
-		2E0B30191AAAF6E0002EA0EC /* CVCircles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */; };
+		2E0B30191AAAF6E0002EA0EC /* CVCircles.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30131AAAF6E0002EA0EC /* CVCircles.mm */; };
 		2E0B301A1AAAF6E0002EA0EC /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */; };
 		2E0B301B1AAAF6E0002EA0EC /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30181AAAF6E0002EA0EC /* UIImage+OpenCV.mm */; };
 		2E0B30261AAB0376002EA0EC /* CheckerCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B30251AAB0375002EA0EC /* CheckerCircle.m */; };
+		2E9871541AAB3E8000D4EE6F /* DetectedCheckerCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9871531AAB3E8000D4EE6F /* DetectedCheckerCircle.m */; };
 		3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */; };
 		3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */; };
 		3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */; };
@@ -48,7 +49,7 @@
 		2E0B300D1AAAE4FA002EA0EC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		2E0B300F1AAAE5F4002EA0EC /* GameCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCollectionViewController.h; sourceTree = "<group>"; };
 		2E0B30101AAAE5F4002EA0EC /* GameCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCollectionViewController.m; sourceTree = "<group>"; };
-		2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CVCircles.cpp; sourceTree = "<group>"; };
+		2E0B30131AAAF6E0002EA0EC /* CVCircles.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVCircles.mm; sourceTree = "<group>"; };
 		2E0B30141AAAF6E0002EA0EC /* CVCircles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVCircles.h; sourceTree = "<group>"; };
 		2E0B30151AAAF6E0002EA0EC /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
 		2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
@@ -57,6 +58,8 @@
 		2E0B301D1AAAF783002EA0EC /* Checkers.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkers.pch; sourceTree = "<group>"; };
 		2E0B30241AAB0375002EA0EC /* CheckerCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckerCircle.h; sourceTree = "<group>"; };
 		2E0B30251AAB0375002EA0EC /* CheckerCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckerCircle.m; sourceTree = "<group>"; };
+		2E9871521AAB3E8000D4EE6F /* DetectedCheckerCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetectedCheckerCircle.h; sourceTree = "<group>"; };
+		2E9871531AAB3E8000D4EE6F /* DetectedCheckerCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectedCheckerCircle.m; sourceTree = "<group>"; };
 		3C23EAEA1AAAC1530090EFD0 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
 		3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
 		3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
@@ -110,7 +113,7 @@
 		2E0B30121AAAF6E0002EA0EC /* cpp */ = {
 			isa = PBXGroup;
 			children = (
-				2E0B30131AAAF6E0002EA0EC /* CVCircles.cpp */,
+				2E0B30131AAAF6E0002EA0EC /* CVCircles.mm */,
 				2E0B30141AAAF6E0002EA0EC /* CVCircles.h */,
 				2E0B30151AAAF6E0002EA0EC /* CVWrapper.h */,
 				2E0B30161AAAF6E0002EA0EC /* CVWrapper.mm */,
@@ -217,6 +220,8 @@
 				3C23EB031AAAC5120090EFD0 /* Checker.m */,
 				2E0B30241AAB0375002EA0EC /* CheckerCircle.h */,
 				2E0B30251AAB0375002EA0EC /* CheckerCircle.m */,
+				2E9871521AAB3E8000D4EE6F /* DetectedCheckerCircle.h */,
+				2E9871531AAB3E8000D4EE6F /* DetectedCheckerCircle.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -400,8 +405,9 @@
 				3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */,
 				3CB204FA1AA9D43400429A05 /* main.m in Sources */,
 				3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */,
-				2E0B30191AAAF6E0002EA0EC /* CVCircles.cpp in Sources */,
+				2E0B30191AAAF6E0002EA0EC /* CVCircles.mm in Sources */,
 				3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */,
+				2E9871541AAB3E8000D4EE6F /* DetectedCheckerCircle.m in Sources */,
 				3C23EAFE1AAAC4470090EFD0 /* CaptureSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
