@@ -175,7 +175,7 @@
     CGFloat ratio = (image.size.width / self.containerView.frame.size.width);
     CGRect gridCropFrame = CGRectMake(self.gridView.frame.origin.x * ratio, (self.gridView.frame.origin.y * ratio), self.gridView.frame.size.width * ratio, self.gridView.frame.size.height * ratio);
     
-    self.capturedImage =  image;
+    self.capturedImage =  [image cropImageInFrame:gridCropFrame];
     self.checkerboardImageView.image = self.capturedImage   ;
     [self.checkerboardImageView setContentMode:UIViewContentModeScaleAspectFit];
     self.checkerboardImageView.layer.borderWidth = 3.0f;
