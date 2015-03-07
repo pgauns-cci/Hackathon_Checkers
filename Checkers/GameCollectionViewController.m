@@ -7,6 +7,8 @@
 //
 
 #import "GameCollectionViewController.h"
+#import "CustomCell.h"
+#import "Checker.h"
 
 @interface GameCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -14,7 +16,7 @@
 
 @implementation GameCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"CustomCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,14 +27,14 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 //
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.collectionView.contentOffset = CGPointMake(0, 0);
+    self.collectionView.contentOffset = CGPointMake(0, -1);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,8 +54,25 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    return cell;
+    CustomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    int arrayIndex = indexPath.row + indexPath.section  * 8;
+    Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
+    cell.checker = checker;
+    if (checker.checkerPlayer == 1) {
+        cell.coinColor = self.player1CoinColor;
+    } else if (checker.checkerPlayer == 2) {
+        cell.coinColor = self.player2CoinColor;
+    }
+    //[cell.image setImage:checker.image];
+    
+    if (((indexPath.row + indexPath.section) %2) == 0) {
+        // Display first cell color
+        cell.backgroundColor = self.firstCellColor;
+    } else {
+        // Display second cell color
+        cell.backgroundColor = self.secondCellColor;
+    }
+     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate Methods

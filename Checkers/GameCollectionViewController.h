@@ -10,4 +10,15 @@
 
 @interface GameCollectionViewController : UICollectionViewController
 
+@property (nonatomic, retain) NSMutableArray *checkerObjects;
+@property (nonatomic, retain) UIImage *capturedImage;
+
+// Checker colors
+@property (nonatomic, strong) UIColor *firstCellColor;
+@property (nonatomic, strong) UIColor *secondCellColor;
+
+// Coin colors
+@property (nonatomic, strong) UIColor *player1CoinColor;
+@property (nonatomic, strong) UIColor *player2CoinColor;
+
 @end

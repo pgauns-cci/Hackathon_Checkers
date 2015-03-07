@@ -16,8 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    // test
+
+    // Configure navigation bar appearance through out the app
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    [navigationBar setBackgroundImage:[UIImage imageNamed:@"nav_background"] forBarMetrics:UIBarMetricsDefault];
+    
+    NSDictionary *settings = @{ NSFontAttributeName : [UIFont fontWithName:@"Helvetica Neue" size:20.0],
+                                NSForegroundColorAttributeName : [UIColor whiteColor]};
+    navigationBar.titleTextAttributes = settings;
+    navigationBar.tintColor = [UIColor whiteColor];
+    
     return YES;
 }
 

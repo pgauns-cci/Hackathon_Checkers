@@ -24,6 +24,8 @@
 		3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB031AAAC5120090EFD0 /* Checker.m */; };
 		3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB061AAAC54B0090EFD0 /* GridView.m */; };
 		3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB091AAAC5C00090EFD0 /* UIImage+ImageProcessing.m */; };
+		3C23EB2C1AAB5D560090EFD0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */; };
+		3C23EB2D1AAB5D560090EFD0 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */; };
 		3CB204FA1AA9D43400429A05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204F91AA9D43400429A05 /* main.m */; };
 		3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FC1AA9D43400429A05 /* AppDelegate.m */; };
 		3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */; };
@@ -76,6 +78,9 @@
 		3C23EB061AAAC54B0090EFD0 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
 		3C23EB081AAAC5C00090EFD0 /* UIImage+ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageProcessing.h"; sourceTree = "<group>"; };
 		3C23EB091AAAC5C00090EFD0 /* UIImage+ImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageProcessing.m"; sourceTree = "<group>"; };
+		3C23EB291AAB5D560090EFD0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		3CB204F41AA9D43400429A05 /* Checkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB204F81AA9D43400429A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB204F91AA9D43400429A05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -167,6 +172,9 @@
 		3C23EAF61AAAC1DA0090EFD0 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				3C23EB291AAB5D560090EFD0 /* CustomCell.h */,
+				3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */,
+				3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */,
 				3C23EB051AAAC54B0090EFD0 /* GridView.h */,
 				3C23EB061AAAC54B0090EFD0 /* GridView.m */,
 			);
@@ -370,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C23EB2D1AAB5D560090EFD0 /* CustomCell.xib in Resources */,
 				3CB205031AA9D43400429A05 /* Main.storyboard in Resources */,
 				3CB205081AA9D43400429A05 /* LaunchScreen.xib in Resources */,
 				3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */,
@@ -400,6 +409,7 @@
 				2E0B301B1AAAF6E0002EA0EC /* UIImage+OpenCV.mm in Sources */,
 				3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */,
 				3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */,
+				3C23EB2C1AAB5D560090EFD0 /* CustomCell.m in Sources */,
 				3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */,
 				2E0B30111AAAE5F4002EA0EC /* GameCollectionViewController.m in Sources */,
 				3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */,
@@ -538,6 +548,7 @@
 				);
 				GCC_PREFIX_HEADER = Checkers/Checkers.pch;
 				INFOPLIST_FILE = Checkers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -553,6 +564,7 @@
 				);
 				GCC_PREFIX_HEADER = Checkers/Checkers.pch;
 				INFOPLIST_FILE = Checkers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

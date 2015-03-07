@@ -7,10 +7,11 @@
 //
 
 #import "CaptureGameViewController.h"
-#import "GridView.h"
 #import "UIImage+ImageProcessing.h"
-#import "Checker.h"
 #import "CaptureSessionManager.h"
+#import "GameViewController.h"
+#import "GridView.h"
+#import "Checker.h"
 #import "Common.h"
 
 @interface CaptureGameViewController ()
@@ -57,12 +58,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSMutableArray *arrayOfCheckerCircles = [Common detectedCirclesInImage:[UIImage imageNamed:@"CheckerBoard_dark.png"]
+    NSMutableArray *arrayOfCheckerCircles = [Common detectedCirclesInImage:[Common convertToBinary:[UIImage imageNamed:@"CheckerBoard_dark.png"]]
                                                                         dp:1.0
                                                                    minDist:10.0
                                                                     param2:30.0
                                                                 min_radius:1.0
-                                                                max_radius:30.0];
+                                                                max_radius:120.0];
     NSLog(@"CaptureGameViewController - checkerCircles count : %d", [arrayOfCheckerCircles count]);
 }
 
@@ -193,7 +194,6 @@
     
     [self generateCheckerObjects];
     
-    
     //    [self performSegueWithIdentifier:@"showGameViewController" sender:self];
     //GameViewController *vc = [[GameViewController alloc] init];
     //vc.checkerObjects = self.arrayOfCheckerObjects;
@@ -205,14 +205,14 @@
 - (void)generateCheckerObjects {
     self.arrayOfCheckerObjects = nil;
     self.arrayOfCheckerObjects = [[NSMutableArray alloc] init];
-    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_dark"];;
+    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_light"];;
     int index = 0;
     CGFloat widthOfImage = self.capturedImage.size.width / 8.0f;
     CGFloat heightOfImage = self.capturedImage.size.height / 8.0f;
     for (int y = 0; y < 8; y++) {
         for (int x = 0; x < 8; x++) {
             Checker *checker = [[Checker alloc] init];
-            checker.position = CGPointMake(x, y);
+            checker.position = CheckerPositionMake(x, y);
             checker.index = index;
             checker.image = [self.capturedImage cropImageInFrame:CGRectMake(x * widthOfImage, y * heightOfImage, widthOfImage, heightOfImage)];
             checker.imageWithPadding = [self.capturedImage cropImageInFrame:CGRectMake(x*widthOfImage - widthOfImage*kPaddingPercentage, y*heightOfImage - heightOfImage*kPaddingPercentage, widthOfImage + widthOfImage*kPaddingPercentage*2.0f, heightOfImage + heightOfImage*kPaddingPercentage*2.0f)];
@@ -237,4 +237,12 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"GameViewSegue"]) {
+         GameViewController *gameViewController = segue.destinationViewController;
+        gameViewController.checkerObjects = self.arrayOfCheckerObjects;
+        gameViewController.capturedImage = self.capturedImage;
+    }
+}
 @end
