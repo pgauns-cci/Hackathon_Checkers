@@ -258,9 +258,9 @@ static NSArray *staticPictures;
 - (void) tableViewDidSelectPictureAtIndex: (int)index{
     UIImage *image = [UIImage imageNamed:[staticPictures objectAtIndex:index]];
     
-    NSLog(@"%f, %f", image.size.width, image.size.height);
-    CGFloat heightDifference = (image.size.height - self.checkerboardImageView.frame.size.height) / 2.0f;
-    CGRect croppingRect = CGRectMake(heightDifference, heightDifference, self.checkerboardImageView.frame.size.width, self.checkerboardImageView.frame.size.height);
+    CGFloat newHeight = self.containerView.frame.size.height * (image.size.width / self.containerView.frame.size.width);
+    CGFloat heightDifference = (image.size.height - newHeight) / 2.0f;
+    CGRect croppingRect = CGRectMake(0, heightDifference, image.size.width, newHeight);
     
     // Get a cropped image with the aspect ration same as the containerViewController
     UIImage *croppedImage = [image cropImageInFrame:croppingRect];

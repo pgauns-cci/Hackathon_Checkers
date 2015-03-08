@@ -49,6 +49,7 @@ static NSArray *staticPictures;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:121];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     [imageView setImage:[UIImage imageNamed:[staticPictures objectAtIndex:indexPath.row]]];
     
     return cell;
