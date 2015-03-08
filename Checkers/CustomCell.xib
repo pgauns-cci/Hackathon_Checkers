@@ -10,12 +10,25 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47P-Rd-tCZ">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47P-Rd-tCZ"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCr-d7-AHK">
+                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Et8-6I-WOM"/>
+                        <constraint firstAttribute="height" constant="60" id="aaE-zO-FqP"/>
+                    </constraints>
+                </view>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="XCr-d7-AHK" secondAttribute="centerY" id="neV-SU-kiT"/>
+                <constraint firstAttribute="centerX" secondItem="XCr-d7-AHK" secondAttribute="centerX" id="qmg-R6-ifB"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="coinView" destination="XCr-d7-AHK" id="G12-Mr-v75"/>
+            </connections>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

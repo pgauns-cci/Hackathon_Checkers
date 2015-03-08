@@ -68,8 +68,13 @@ static NSString * const reuseIdentifier = @"CustomCell";
     cell.checker = checker;
     if (checker.checkerPlayer == 1) {
         cell.coinView.backgroundColor = self.player1CoinColor;
+        cell.coinView.hidden = NO;
     } else if (checker.checkerPlayer == 2) {
         cell.coinView.backgroundColor = self.player2CoinColor;
+        cell.coinView.hidden = NO;
+    } else {
+        cell.coinView.backgroundColor = [UIColor clearColor];
+        cell.coinView.hidden = YES;
     }
     //[cell.image setImage:checker.image];
     
@@ -87,7 +92,6 @@ static NSString * const reuseIdentifier = @"CustomCell";
         }
     }
     
-    cell.coinView.backgroundColor = [UIColor blackColor];
     return cell;
 }
 

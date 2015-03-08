@@ -288,19 +288,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="700" height="1"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNA-0s-XlK">
-                                    <rect key="frame" x="325" y="-25" width="50" height="51"/>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNA-0s-XlK">
+                                    <rect key="frame" x="325" y="-25" width="40" height="40"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="MHd-Ir-QFT"/>
-                                        <constraint firstAttribute="width" constant="50" id="PMf-Tp-MY9"/>
-                                    </constraints>
                                 </view>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="centerY" secondItem="oNA-0s-XlK" secondAttribute="centerY" id="CZn-wA-7PB"/>
-                                <constraint firstAttribute="centerX" secondItem="oNA-0s-XlK" secondAttribute="centerX" id="lg8-fM-UKm"/>
-                            </constraints>
                             <connections>
                                 <outlet property="coinView" destination="oNA-0s-XlK" id="llK-tn-BNf"/>
                             </connections>
