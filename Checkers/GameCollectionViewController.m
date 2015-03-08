@@ -115,7 +115,8 @@ static NSString * const reuseIdentifier = @"CustomCell";
     fromChecker.containsCoin = FALSE;
     Checker *toChecker = [self.checkerObjects objectAtIndex:toIndexPath.row + toIndexPath.section  * 8];
     toChecker.containsCoin = TRUE;
-    [self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:fromIndexPath, toIndexPath, nil]];
+    //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:fromIndexPath, toIndexPath, nil]];
+    [self.collectionView reloadData];
 }
 
 #pragma mark - LXReorderableCollectionViewDelegateFlowLayout methods
