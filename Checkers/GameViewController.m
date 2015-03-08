@@ -115,8 +115,8 @@
                                                                         param2:30.0
                                                                     min_radius:1.0
                                                                     max_radius:100.0];
-        NSLog(@"CaptureGameViewController - checkerCircles count : %lu", (unsigned long)[arrayOfCheckerCircles count]);
-        
+//        NSLog(@"CaptureGameViewController - checkerCircles count : %lu", (unsigned long)[arrayOfCheckerCircles count]);
+//        
         if ([arrayOfCheckerCircles count] > 0){
             // Coin - Found
             [houghAlgoDetectedCoins addObject:[NSIndexPath  indexPathForRow:checker.position.row inSection:checker.position.column]];
@@ -131,7 +131,7 @@
         }
     }
     
-    NSLog(@"CaptureGameViewController - checkDetectedCheckWithCircles count : %lu", (unsigned long)[houghAlgoDetectedCoins count]);
+//    NSLog(@"CaptureGameViewController - checkDetectedCheckWithCircles count : %lu", (unsigned long)[houghAlgoDetectedCoins count]);
     
     [self findCheckerCoinColors];
     /*

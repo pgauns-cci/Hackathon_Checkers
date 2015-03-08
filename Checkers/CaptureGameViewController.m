@@ -70,7 +70,7 @@
                                                                     param2:30.0
                                                                 min_radius:1.0
                                                                 max_radius:120.0];
-    NSLog(@"CaptureGameViewController - checkerCircles count : %d", [arrayOfCheckerCircles count]);
+//    NSLog(@"CaptureGameViewController - checkerCircles count : %d", [arrayOfCheckerCircles count]);
 }
 
 - (void)viewDidLayoutSubviews {
@@ -108,17 +108,18 @@
 
 #pragma mark - Custom getters
 
-- (CaptureSessionManager *)captureManager {
-    if (!_captureManager) {
-        _captureManager = [[CaptureSessionManager alloc] init];
-    }
-    return _captureManager;
-}
+//- (CaptureSessionManager *)captureManager {
+//    if (!_captureManager) {
+//        _captureManager = [[CaptureSessionManager alloc] init];
+//    }
+//    return _captureManager;
+//}
 
 #pragma mark - Custom Setters
 
 - (void)setIsCapturingGame:(BOOL)isCapturingGame {
     _isCapturingGame = isCapturingGame;
+    self.backgroundImageView.image = [UIImage imageNamed:@"background"];
     if (!_isCapturingGame) {
         
         // Reset Capture Manager
@@ -128,6 +129,8 @@
         
         // Change text on the label
         self.infoLabel.text = @"Tap to capture";
+        [self.arrayOfCheckerObjects removeAllObjects];
+        self.arrayOfCheckerObjects = nil;
     } else {
         // Capture image
         [self saveCapturedImage];
@@ -145,13 +148,23 @@
 }
 
 - (IBAction)nextButtonTapped:(UIBarButtonItem *)sender {
-    [self generateCheckerObjects];
-    [self performSegueWithIdentifier:@"GameViewSegue" sender:nil];
+//    [self generateCheckerObjects];
+    if (self.arrayOfCheckerObjects) {
+        [self performSegueWithIdentifier:@"GameViewSegue" sender:nil];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Please capture or choose an image" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 #pragma mark - Private Methods
 
 - (void)configureCaptureManager {
+    
+    if (!self.captureManager) {
+        self.captureManager = [[CaptureSessionManager alloc] init];
+    }
+    
     [self.captureManager addVideoInput];
     [self configurePreviewLayer];
     [self.captureManager.captureSession startRunning];
@@ -257,6 +270,13 @@
 # pragma mark StaticPictureTableViewControllerDelegate methods
 - (void) tableViewDidSelectPictureAtIndex: (int)index{
     UIImage *image = [UIImage imageNamed:[[(AppDelegate *)[[UIApplication sharedApplication] delegate] staticPictures] objectAtIndex:index]];
+    
+    
+    if (self.captureManager) {
+        self.captureManager = nil;
+    }
+    self.isCapturingGame = YES;
+    
     
     self.backgroundImageView.image = image;
     

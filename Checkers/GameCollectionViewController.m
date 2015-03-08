@@ -148,25 +148,25 @@ static NSString * const reuseIdentifier = @"CustomCell";
 #pragma mark - LXReorderableCollectionViewDelegateFlowLayout methods
 
 - (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout willBeginDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"will begin drag");
+//    NSLog(@"will begin drag");
 }
 
 - (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout didBeginDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"did begin drag");
+//    NSLog(@"did begin drag");
 }
 
 - (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout willEndDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"will end drag");
+//    NSLog(@"will end drag");
 }
 
 - (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout didEndDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"did end drag");
+//    NSLog(@"did end drag");
 }
 
 - (void) checkerStatus{
     for (Checker *checker in self.checkerObjects) {
         if([checker containsCoin]){
-            NSLog(@"Coin Position : (%d, %d)", checker.position.row, checker.position.column);
+//            NSLog(@"Coin Position : (%d, %d)", checker.position.row, checker.position.column);
         }
     }
 }
