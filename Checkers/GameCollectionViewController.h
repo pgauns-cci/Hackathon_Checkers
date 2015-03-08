@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LXReorderableCollectionViewFlowLayout.h"
 
-@interface GameCollectionViewController : UICollectionViewController
+@interface GameCollectionViewController : UICollectionViewController<LXReorderableCollectionViewDataSource, LXReorderableCollectionViewDelegateFlowLayout>
 
 @property (nonatomic, retain) NSMutableArray *checkerObjects;
 @property (nonatomic, retain) UIImage *capturedImage;
@@ -20,5 +21,7 @@
 // Coin colors
 @property (nonatomic, strong) UIColor *player1CoinColor;
 @property (nonatomic, strong) UIColor *player2CoinColor;
+
+@property (nonatomic, assign) BOOL isEvenCheckPlayable;
 
 @end

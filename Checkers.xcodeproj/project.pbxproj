@@ -26,6 +26,7 @@
 		3C23EB0A1AAAC5C00090EFD0 /* UIImage+ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB091AAAC5C00090EFD0 /* UIImage+ImageProcessing.m */; };
 		3C23EB2C1AAB5D560090EFD0 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */; };
 		3C23EB2D1AAB5D560090EFD0 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */; };
+		3C23EB301AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB2F1AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m */; };
 		3CB204FA1AA9D43400429A05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204F91AA9D43400429A05 /* main.m */; };
 		3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FC1AA9D43400429A05 /* AppDelegate.m */; };
 		3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */; };
@@ -81,6 +82,8 @@
 		3C23EB291AAB5D560090EFD0 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		3C23EB2A1AAB5D560090EFD0 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		3C23EB2B1AAB5D560090EFD0 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		3C23EB2E1AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		3C23EB2F1AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		3CB204F41AA9D43400429A05 /* Checkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB204F81AA9D43400429A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB204F91AA9D43400429A05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 		3CB204F61AA9D43400429A05 /* Checkers */ = {
 			isa = PBXGroup;
 			children = (
+				3C23EB2E1AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.h */,
+				3C23EB2F1AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m */,
 				3C23EB011AAAC4FD0090EFD0 /* Helper Classes */,
 				3C23EB001AAAC4A70090EFD0 /* UI */,
 				3C23EAFF1AAAC48B0090EFD0 /* ViewControllers */,
@@ -414,6 +419,7 @@
 				2E0B30111AAAE5F4002EA0EC /* GameCollectionViewController.m in Sources */,
 				3C23EB071AAAC54B0090EFD0 /* GridView.m in Sources */,
 				3CB204FA1AA9D43400429A05 /* main.m in Sources */,
+				3C23EB301AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
 				3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */,
 				2E0B30191AAAF6E0002EA0EC /* CVCircles.mm in Sources */,
 				3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */,

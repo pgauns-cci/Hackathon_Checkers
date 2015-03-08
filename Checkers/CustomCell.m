@@ -38,21 +38,13 @@
     delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.userInteractionEnabled = YES;
-    
-    UILongPressGestureRecognizer *pressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressDetected:)];
-    pressRecognizer.numberOfTapsRequired = 0;
-    pressRecognizer.minimumPressDuration = 0.1;
-    [self addGestureRecognizer:pressRecognizer];
-}
-
-- (void)pressDetected:(UILongPressGestureRecognizer *)pressRecognizer
-{
 }
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+    NSLog(@"drawRect: Coin Position : (%d, %d)", self.checker.position.row, self.checker.position.column);
     // Drawing code
     if(self.checker.containsCoin){
         // If the check contains coin then get the center pixel color and draw circle
@@ -96,6 +88,4 @@
         [self setBackgroundColor:color];
     }
 }
-
-
 @end
