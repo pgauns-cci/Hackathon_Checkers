@@ -71,7 +71,6 @@ static NSString * const reuseIdentifier = @"CustomCell";
     } else if (checker.checkerPlayer == 2) {
         cell.coinColor = self.player2CoinColor;
     }
-    //[cell.image setImage:checker.image];
     
     if (((indexPath.row + indexPath.section) %2) == 0) {
         // Display first cell color

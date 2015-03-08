@@ -10,11 +10,15 @@
 #import "UIImage+ImageProcessing.h"
 #import "CaptureSessionManager.h"
 #import "GameViewController.h"
+#import "StaticPictureTableViewController.h"
 #import "GridView.h"
 #import "Checker.h"
 #import "Common.h"
 
-@interface CaptureGameViewController ()
+static NSArray *staticPictures;
+
+
+@interface CaptureGameViewController ()<StaticPictureTableViewControllerDelegate>
 
 // Properties
 @property (nonatomic, strong) CaptureSessionManager *captureManager;
@@ -48,6 +52,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    staticPictures = [NSArray arrayWithObjects:@"CheckerBoard_light", @"CheckerBoard1", nil];
     
     [self configureCaptureManager];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -171,7 +177,6 @@
 
 - (void)imageCapturedSuccessfully {
     
-    //Hardcorded image
     UIImage *image = self.captureManager.stillImage;
     CGFloat newHeight = self.containerView.frame.size.height * (image.size.width / self.containerView.frame.size.width);
     CGFloat heightDifference = (image.size.height - newHeight) / 2.0f;
@@ -205,7 +210,7 @@
 - (void)generateCheckerObjects {
     self.arrayOfCheckerObjects = nil;
     self.arrayOfCheckerObjects = [[NSMutableArray alloc] init];
-    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_light"];;
+//    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_light"];;
     int index = 0;
     CGFloat widthOfImage = self.capturedImage.size.width / 8.0f;
     CGFloat heightOfImage = self.capturedImage.size.height / 8.0f;
@@ -240,9 +245,39 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"GameViewSegue"]) {
-         GameViewController *gameViewController = segue.destinationViewController;
+        GameViewController *gameViewController = segue.destinationViewController;
         gameViewController.checkerObjects = self.arrayOfCheckerObjects;
         gameViewController.capturedImage = self.capturedImage;
     }
+    else if([segue.identifier isEqualToString:@"StaticPictureTableView"]){
+        StaticPictureTableViewController *staticPictureTableViewController = segue.destinationViewController;
+        staticPictureTableViewController.delegate = self;
+    }
+}
+
+# pragma mark StaticPictureTableViewControllerDelegate methods
+- (void) tableViewDidSelectPictureAtIndex: (int)index{
+    UIImage *image = [UIImage imageNamed:[staticPictures objectAtIndex:index]];
+    
+    CGFloat newHeight = self.containerView.frame.size.height * (image.size.width / self.containerView.frame.size.width);
+    CGFloat heightDifference = (image.size.height - newHeight) / 2.0f;
+    CGRect croppingRect = CGRectMake(0, heightDifference, image.size.width, newHeight);
+    
+    // Get a cropped image with the aspect ration same as the containerViewController
+    UIImage *croppedImage = [image cropImageInFrame:croppingRect];
+    image = croppedImage;
+    
+    CGFloat ratio = (image.size.width / self.containerView.frame.size.width);
+    CGRect gridCropFrame = CGRectMake(self.gridView.frame.origin.x * ratio, (self.gridView.frame.origin.y * ratio), self.gridView.frame.size.width * ratio, self.gridView.frame.size.height * ratio);
+    
+    self.capturedImage =  [image cropImageInFrame:gridCropFrame];
+    self.checkerboardImageView.image = self.capturedImage   ;
+    [self.checkerboardImageView setContentMode:UIViewContentModeScaleAspectFit];
+    self.checkerboardImageView.layer.borderWidth = 3.0f;
+    self.checkerboardImageView.layer.borderColor = [UIColor redColor].CGColor;
+    self.checkerboardImageView.hidden = NO;
+    self.captureManager = nil;
+    
+    [self generateCheckerObjects];
 }
 @end
