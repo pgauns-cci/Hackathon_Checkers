@@ -11,7 +11,15 @@
 #import "Checker.h"
 #define LX_LIMITED_MOVEMENT 0
 
+typedef enum PlayerTurn {
+    PlayerAnyTurn = 0,
+    Player1Turn = 1,
+    Player2Turn = 2,
+} PlayerTurn;
+
 @interface GameCollectionViewController ()
+
+@property (nonatomic, readwrite) BOOL isplayer1;
 
 @end
 
@@ -116,12 +124,14 @@ static NSString * const reuseIdentifier = @"CustomCell";
     return NO;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath didMoveToIndexPath:(NSIndexPath *)toIndexPath;{
-    Checker *fromChecker = [self.checkerObjects objectAtIndex:fromIndexPath.row + fromIndexPath.section  * 8];
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath didMoveToIndexPath:(NSIndexPath *)toIndexPath {
+    Checker *fromChecker = [self.checkerObjects objectAtIndex:(fromIndexPath.row + fromIndexPath.section  * 8)];
     fromChecker.containsCoin = FALSE;
-    Checker *toChecker = [self.checkerObjects objectAtIndex:toIndexPath.row + toIndexPath.section  * 8];
+    
+    Checker *toChecker = [self.checkerObjects objectAtIndex:(toIndexPath.row + toIndexPath.section  * 8) ];
     toChecker.containsCoin = TRUE;
-    //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:fromIndexPath, toIndexPath, nil]];
+    toChecker.checkerPlayer = fromChecker.checkerPlayer;
+    fromChecker.checkerPlayer = 0;
     [self.collectionView reloadData];
 }
 
