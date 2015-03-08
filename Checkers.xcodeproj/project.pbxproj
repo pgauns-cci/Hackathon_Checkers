@@ -29,6 +29,7 @@
 		3C23EB301AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB2F1AABBA620090EFD0 /* LXReorderableCollectionViewFlowLayout.m */; };
 		3C23EB331AABFE2B0090EFD0 /* StaticPictureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB321AABFE2B0090EFD0 /* StaticPictureTableViewController.m */; };
 		3C23EB351AAC0AE10090EFD0 /* CheckerBoard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB341AAC0AE10090EFD0 /* CheckerBoard1.png */; };
+		3C23EB391AAC46440090EFD0 /* CheckerBoard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB381AAC46440090EFD0 /* CheckerBoard2.png */; };
 		3CB204FA1AA9D43400429A05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204F91AA9D43400429A05 /* main.m */; };
 		3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FC1AA9D43400429A05 /* AppDelegate.m */; };
 		3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */; };
@@ -89,6 +90,7 @@
 		3C23EB311AABFE2B0090EFD0 /* StaticPictureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticPictureTableViewController.h; sourceTree = "<group>"; };
 		3C23EB321AABFE2B0090EFD0 /* StaticPictureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticPictureTableViewController.m; sourceTree = "<group>"; };
 		3C23EB341AAC0AE10090EFD0 /* CheckerBoard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard1.png; sourceTree = "<group>"; };
+		3C23EB381AAC46440090EFD0 /* CheckerBoard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard2.png; sourceTree = "<group>"; };
 		3CB204F41AA9D43400429A05 /* Checkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB204F81AA9D43400429A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB204F91AA9D43400429A05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		3C23EAF51AAAC19B0090EFD0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3C23EB381AAC46440090EFD0 /* CheckerBoard2.png */,
 				3C23EB341AAC0AE10090EFD0 /* CheckerBoard1.png */,
 				3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */,
 				3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */,
@@ -393,6 +396,7 @@
 			files = (
 				3C23EB351AAC0AE10090EFD0 /* CheckerBoard1.png in Resources */,
 				3C23EB2D1AAB5D560090EFD0 /* CustomCell.xib in Resources */,
+				3C23EB391AAC46440090EFD0 /* CheckerBoard2.png in Resources */,
 				3CB205031AA9D43400429A05 /* Main.storyboard in Resources */,
 				3CB205081AA9D43400429A05 /* LaunchScreen.xib in Resources */,
 				3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */,

@@ -7,18 +7,20 @@
 //
 
 #import "StaticPictureTableViewController.h"
+#import "AppDelegate.h"
+
 #define CELLIDENTIFIER_1 @"CellIdentifierPicture1";
 #define CELLIDENTIFIER_2 @"CellIdentifierPicture2";
 
-static NSArray *staticPictures;
+@interface StaticPictureTableViewController ()
+@property(nonatomic, retain) NSArray *staticPictures;
+@end
 
 @implementation StaticPictureTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    staticPictures = [NSArray arrayWithObjects:@"CheckerBoard_light", @"CheckerBoard1", nil];
-
+    self.staticPictures = [(AppDelegate *)[[UIApplication sharedApplication]delegate] staticPictures];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -28,7 +30,7 @@ static NSArray *staticPictures;
 # pragma mark UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.staticPictures.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -50,7 +52,7 @@ static NSArray *staticPictures;
     }
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:121];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [imageView setImage:[UIImage imageNamed:[staticPictures objectAtIndex:indexPath.row]]];
+    [imageView setImage:[UIImage imageNamed:[self.staticPictures objectAtIndex:indexPath.row]]];
     
     return cell;
 }

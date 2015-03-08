@@ -14,8 +14,8 @@
 #import "GridView.h"
 #import "Checker.h"
 #import "Common.h"
+#import "AppDelegate.h"
 
-static NSArray *staticPictures;
 
 
 @interface CaptureGameViewController ()<StaticPictureTableViewControllerDelegate>
@@ -53,7 +53,6 @@ static NSArray *staticPictures;
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    staticPictures = [NSArray arrayWithObjects:@"CheckerBoard_light", @"CheckerBoard1", nil];
     
     [self configureCaptureManager];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -256,7 +255,7 @@ static NSArray *staticPictures;
 
 # pragma mark StaticPictureTableViewControllerDelegate methods
 - (void) tableViewDidSelectPictureAtIndex: (int)index{
-    UIImage *image = [UIImage imageNamed:[staticPictures objectAtIndex:index]];
+    UIImage *image = [UIImage imageNamed:[[(AppDelegate *)[[UIApplication sharedApplication] delegate] staticPictures] objectAtIndex:index]];
     
     CGFloat newHeight = self.containerView.frame.size.height * (image.size.width / self.containerView.frame.size.width);
     CGFloat heightDifference = (image.size.height - newHeight) / 2.0f;
