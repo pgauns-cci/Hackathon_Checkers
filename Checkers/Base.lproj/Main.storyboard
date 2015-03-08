@@ -101,6 +101,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundImageView" destination="EHz-sU-OYf" id="MRI-g7-qQm"/>
                         <outlet property="checkerboardImageView" destination="7Av-fa-TXv" id="Q8M-p5-wbc"/>
                         <outlet property="containerView" destination="b3A-vR-Lcx" id="Zu0-dK-TRf"/>
                         <outlet property="gridView" destination="H1Z-9z-S6h" id="MrG-ue-pih"/>

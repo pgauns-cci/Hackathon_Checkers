@@ -21,6 +21,7 @@
 @interface CaptureGameViewController ()<StaticPictureTableViewControllerDelegate>
 
 // Properties
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, strong) CaptureSessionManager *captureManager;
 @property (nonatomic, strong) IBOutlet UIView *containerView;
 @property (nonatomic, strong) IBOutlet UILabel *infoLabel;
@@ -256,6 +257,8 @@
 # pragma mark StaticPictureTableViewControllerDelegate methods
 - (void) tableViewDidSelectPictureAtIndex: (int)index{
     UIImage *image = [UIImage imageNamed:[[(AppDelegate *)[[UIApplication sharedApplication] delegate] staticPictures] objectAtIndex:index]];
+    
+    self.backgroundImageView.image = image;
     
     CGFloat newHeight = self.containerView.frame.size.height * (image.size.width / self.containerView.frame.size.width);
     CGFloat heightDifference = (image.size.height - newHeight) / 2.0f;
