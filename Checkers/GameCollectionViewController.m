@@ -84,7 +84,6 @@ static NSString * const reuseIdentifier = @"CustomCell";
         cell.coinView.backgroundColor = [UIColor clearColor];
         cell.coinView.hidden = YES;
     }
-    //[cell.image setImage:checker.image];
     
     if (((indexPath.row + indexPath.section) %2) == 0) {
         // Display first cell color

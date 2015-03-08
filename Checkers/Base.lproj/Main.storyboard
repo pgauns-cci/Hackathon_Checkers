@@ -87,6 +87,13 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Capture Real World Game" id="HRQ-f0-qFJ">
+                        <barButtonItem key="leftBarButtonItem" title="Select Demo Picture" id="iuS-Xc-cBc">
+                            <connections>
+                                <segue destination="NCj-z0-aaF" kind="popover" identifier="StaticPictureTableView" popoverAnchorBarButtonItem="iuS-Xc-cBc" id="God-Jq-rka">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="a0V-ip-14E">
                             <connections>
                                 <action selector="nextButtonTapped:" destination="Ptc-80-gjP" id="GXl-cP-c1M"/>
@@ -110,6 +117,66 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1200.6400000000001" y="629.75999999999999"/>
+        </scene>
+        <!--Static Picture Table View Controller-->
+        <scene sceneID="c40-BV-CTK">
+            <objects>
+                <tableViewController id="NCj-z0-aaF" customClass="StaticPictureTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="22" sectionFooterHeight="22" id="cjq-57-kgK">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifierPicture1" id="ehg-cb-om7">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehg-cb-om7" id="6lI-SS-aEg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="121" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CheckerBoard_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="7wV-QS-J0x">
+                                            <rect key="frame" x="10" y="10" width="150" height="150"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picture 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjQ-pc-rMR">
+                                            <rect key="frame" x="192" y="74" width="69" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifierPicture2" id="Rmj-ll-vz4">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rmj-ll-vz4" id="T1d-ll-m4H">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="121" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CheckerBoard_dark.png" translatesAutoresizingMaskIntoConstraints="NO" id="r1o-vE-jOr">
+                                            <rect key="frame" x="10" y="10" width="150" height="150"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picture 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kip-rU-QiR">
+                                            <rect key="frame" x="191" y="74" width="69" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NCj-z0-aaF" id="n95-Kn-3bD"/>
+                            <outlet property="delegate" destination="NCj-z0-aaF" id="vhL-2y-D9B"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="350"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ky4-cr-biK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="1819"/>
         </scene>
         <!--Game-->
         <scene sceneID="ySW-6b-804">
@@ -329,6 +396,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CheckerBoard_dark.png" width="700" height="700"/>
+        <image name="CheckerBoard_light.png" width="700" height="700"/>
         <image name="background" width="1024" height="768"/>
         <image name="frame" width="500" height="500"/>
     </resources>
