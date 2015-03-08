@@ -129,6 +129,8 @@
         
         // Change text on the label
         self.infoLabel.text = @"Tap to capture";
+        [self.arrayOfCheckerObjects removeAllObjects];
+        self.arrayOfCheckerObjects = nil;
     } else {
         // Capture image
         [self saveCapturedImage];
@@ -147,7 +149,12 @@
 
 - (IBAction)nextButtonTapped:(UIBarButtonItem *)sender {
 //    [self generateCheckerObjects];
-    [self performSegueWithIdentifier:@"GameViewSegue" sender:nil];
+    if (self.arrayOfCheckerObjects) {
+        [self performSegueWithIdentifier:@"GameViewSegue" sender:nil];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Please capture or choose an image" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 #pragma mark - Private Methods
