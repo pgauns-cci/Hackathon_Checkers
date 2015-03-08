@@ -143,8 +143,8 @@
             lowDensity++;
         }
     }
-    NSLog(@"(%d : %d)", lowDensity, highDendity);
-    NSLog(@"Difference : (%d)",abs(highDendity - lowDensity));
+//    NSLog(@"(%d : %d)", lowDensity, highDendity);
+//    NSLog(@"Difference : (%d)",abs(highDendity - lowDensity));
     
     if(abs(highDendity - lowDensity) < length/(4 * 3)){
         return true;
@@ -198,9 +198,9 @@
     NSMutableArray *arrayOfCheckerCircles = [DetectedCheckerCircle sharedDetectedCheckerCircle].arrayOfCheckerCircles;
     
     // Testing purpose
-    for (CheckerCircle *checkerCircle in arrayOfCheckerCircles) {
-        NSLog(@"CheckerCircle :   %@", checkerCircle.description);
-    }
+//    for (CheckerCircle *checkerCircle in arrayOfCheckerCircles) {
+//        NSLog(@"CheckerCircle :   %@", checkerCircle.description);
+//    }
     return arrayOfCheckerCircles;
 }
 
@@ -220,9 +220,9 @@
     NSMutableArray *arrayOfCheckerCircles = [DetectedCheckerCircle sharedDetectedCheckerCircle].arrayOfCheckerCircles;
     
     // Testing purpose
-    for (CheckerCircle *checkerCircle in arrayOfCheckerCircles) {
-        NSLog(@"CheckerCircle :   %@", checkerCircle.description);
-    }
+//    for (CheckerCircle *checkerCircle in arrayOfCheckerCircles) {
+//        NSLog(@"CheckerCircle :   %@", checkerCircle.description);
+//    }
     return arrayOfCheckerCircles;
 }
 
