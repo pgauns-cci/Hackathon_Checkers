@@ -33,7 +33,7 @@ static NSString * const reuseIdentifier = @"CustomCell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.collectionView.contentOffset = CGPointMake(0, -1);
+    self.collectionView.contentOffset = CGPointMake(0, 2);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,9 +67,9 @@ static NSString * const reuseIdentifier = @"CustomCell";
     Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
     cell.checker = checker;
     if (checker.checkerPlayer == 1) {
-        cell.coinColor = self.player1CoinColor;
+        cell.coinView.backgroundColor = self.player1CoinColor;
     } else if (checker.checkerPlayer == 2) {
-        cell.coinColor = self.player2CoinColor;
+        cell.coinView.backgroundColor = self.player2CoinColor;
     }
     //[cell.image setImage:checker.image];
     
@@ -86,6 +86,8 @@ static NSString * const reuseIdentifier = @"CustomCell";
             self.isEvenCheckPlayable = FALSE;
         }
     }
+    
+    cell.coinView.backgroundColor = [UIColor blackColor];
     return cell;
 }
 
