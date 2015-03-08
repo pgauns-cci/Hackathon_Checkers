@@ -210,7 +210,6 @@ static NSArray *staticPictures;
 - (void)generateCheckerObjects {
     self.arrayOfCheckerObjects = nil;
     self.arrayOfCheckerObjects = [[NSMutableArray alloc] init];
-//    self.capturedImage =  [UIImage imageNamed:@"CheckerBoard_light"];;
     int index = 0;
     CGFloat widthOfImage = self.capturedImage.size.width / 8.0f;
     CGFloat heightOfImage = self.capturedImage.size.height / 8.0f;
@@ -259,9 +258,9 @@ static NSArray *staticPictures;
 - (void) tableViewDidSelectPictureAtIndex: (int)index{
     UIImage *image = [UIImage imageNamed:[staticPictures objectAtIndex:index]];
     
-    CGFloat newHeight = self.containerView.frame.size.height * (image.size.width / self.containerView.frame.size.width);
-    CGFloat heightDifference = (image.size.height - newHeight) / 2.0f;
-    CGRect croppingRect = CGRectMake(0, heightDifference, image.size.width, newHeight);
+    NSLog(@"%f, %f", image.size.width, image.size.height);
+    CGFloat heightDifference = (image.size.height - self.checkerboardImageView.frame.size.height) / 2.0f;
+    CGRect croppingRect = CGRectMake(heightDifference, heightDifference, self.checkerboardImageView.frame.size.width, self.checkerboardImageView.frame.size.height);
     
     // Get a cropped image with the aspect ration same as the containerViewController
     UIImage *croppedImage = [image cropImageInFrame:croppingRect];
