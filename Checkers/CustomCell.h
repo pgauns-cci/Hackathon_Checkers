@@ -2,8 +2,8 @@
 //  CustomCell.h
 //  CollectionViewDragAndDrop
 //
-//  Created by Bharat Naik on 30/01/14.
-//  Copyright (c) 2014 Bharat Naik. All rights reserved.
+//  Created by Pratima Gauns on 06/03/15.
+//  Copyright (c) 2015 VP. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

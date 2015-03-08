@@ -75,9 +75,11 @@ static NSString * const reuseIdentifier = @"CustomCell";
     Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
     cell.checker = checker;
     if (checker.checkerPlayer == 1) {
+        cell.backgroundColor = self.player1CoinColor;
         cell.coinView.backgroundColor = self.player1CoinColor;
         cell.coinView.hidden = NO;
     } else if (checker.checkerPlayer == 2) {
+        cell.backgroundColor = self.player2CoinColor;
         cell.coinView.backgroundColor = self.player2CoinColor;
         cell.coinView.hidden = NO;
     } else {
@@ -85,7 +87,7 @@ static NSString * const reuseIdentifier = @"CustomCell";
         cell.coinView.hidden = YES;
     }
     
-    if (((indexPath.row + indexPath.section) %2) == 0) {
+    if (((indexPath.row + indexPath.section) % 2) == 0) {
         // Display first cell color
         cell.backgroundColor = self.firstCellColor;
         if([checker containsCoin]){
@@ -117,7 +119,16 @@ static NSString * const reuseIdentifier = @"CustomCell";
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath canMoveToIndexPath:(NSIndexPath *)toIndexPath {
-    if(self.isEvenCheckPlayable && (toIndexPath.row + toIndexPath.section) %2 == 0){
+    int arrayIndex = toIndexPath.row + toIndexPath.section  * 8;
+    Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
+    if([checker containsCoin]){
+        return NO;
+    }
+    if(self.isEvenCheckPlayable){
+        if((toIndexPath.row + toIndexPath.section) %2 == 0)
+            return YES;
+    }
+    else if((toIndexPath.row + toIndexPath.section) %2 == 1){
         return YES;
     }
     return NO;

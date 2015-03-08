@@ -9,8 +9,7 @@
 #import "StaticPictureTableViewController.h"
 #import "AppDelegate.h"
 
-#define CELLIDENTIFIER_1 @"CellIdentifierPicture1";
-#define CELLIDENTIFIER_2 @"CellIdentifierPicture2";
+#define CELLIDENTIFIER @"CellIdentifier";
 
 @interface StaticPictureTableViewController ()
 @property(nonatomic, retain) NSArray *staticPictures;
@@ -34,18 +33,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *simpleTableIdentifier;
-
-    switch (indexPath.row) {
-        case 0:
-            simpleTableIdentifier = CELLIDENTIFIER_1;
-            break;
-        case 1:
-            simpleTableIdentifier = CELLIDENTIFIER_2;
-            break;
-        default:
-            break;
-    }
+    static NSString *simpleTableIdentifier = CELLIDENTIFIER;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
