@@ -57,6 +57,8 @@
 @property (nonatomic, strong) UIColor *player1CoinColor;
 @property (nonatomic, strong) UIColor *player2CoinColor;
 
+@property (nonatomic, strong) GameCollectionViewController *gameCollectionViewController;
+
 // IBActions
 - (IBAction)colorSelectorButtonTapped:(UIButton *)sender;
 
@@ -96,6 +98,8 @@
 
         gameCollectionViewController.player1CoinColor = self.player1CoinColor;
         gameCollectionViewController.player2CoinColor = self.player2CoinColor;
+        
+        self.gameCollectionViewController = gameCollectionViewController;
     }
 }
 
@@ -218,6 +222,24 @@
         // Button 2 color
         self.player1CoinView.backgroundColor = self.button2.backgroundColor;
         self.player2CoinView.backgroundColor = self.button1.backgroundColor;
+        
+       
+        // PLayer 1 and Player 2 color
+        UIColor *tempColor = self.player1CoinColor;
+        self.player1CoinColor = self.player2CoinColor;
+        self.player2CoinColor = tempColor;
+        
+        self.gameCollectionViewController.player1CoinColor = self.player1CoinColor;
+        self.gameCollectionViewController.player2CoinColor = self.player2CoinColor;
+        
+        for (Checker * checker in self.gameCollectionViewController.checkerObjects) {
+            if (checker.checkerPlayer == CheckerPlayer1) {
+                checker.checkerPlayer = CheckerPlayer2;
+            } else if (checker.checkerPlayer == CheckerPlayer2) {
+                checker.checkerPlayer = CheckerPlayer1;
+            }
+        }
+        [self.gameCollectionViewController.collectionView reloadData];
     }
     self.coinSelectorContainerView.hidden = YES;
 }

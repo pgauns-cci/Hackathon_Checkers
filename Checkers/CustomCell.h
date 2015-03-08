@@ -11,8 +11,10 @@
 
 @interface CustomCell : UICollectionViewCell
 
-@property (nonatomic, retain) Checker     *checker;
-@property (strong, nonatomic) IBOutlet UIImageView *image;
-@property (nonatomic, strong) UIColor *coinColor;
+@property (nonatomic, strong) Checker *checker;
+@property (nonatomic, strong) IBOutlet UIView *coinView;
+
+//@property (strong, nonatomic) IBOutlet UIImageView *image;
+//@property (nonatomic, strong) UIColor *coinColor;
 
 @end

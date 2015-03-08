@@ -11,7 +11,15 @@
 #import "Checker.h"
 #define LX_LIMITED_MOVEMENT 0
 
+typedef enum PlayerTurn {
+    PlayerAnyTurn = 0,
+    Player1Turn = 1,
+    Player2Turn = 2,
+} PlayerTurn;
+
 @interface GameCollectionViewController ()
+
+@property (nonatomic, readwrite) BOOL isplayer1;
 
 @end
 
@@ -33,7 +41,7 @@ static NSString * const reuseIdentifier = @"CustomCell";
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.collectionView.contentOffset = CGPointMake(0, -1);
+    self.collectionView.contentOffset = CGPointMake(0, 2);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,9 +75,14 @@ static NSString * const reuseIdentifier = @"CustomCell";
     Checker *checker = [self.checkerObjects objectAtIndex:arrayIndex];
     cell.checker = checker;
     if (checker.checkerPlayer == 1) {
-        cell.coinColor = self.player1CoinColor;
+        cell.coinView.backgroundColor = self.player1CoinColor;
+        cell.coinView.hidden = NO;
     } else if (checker.checkerPlayer == 2) {
-        cell.coinColor = self.player2CoinColor;
+        cell.coinView.backgroundColor = self.player2CoinColor;
+        cell.coinView.hidden = NO;
+    } else {
+        cell.coinView.backgroundColor = [UIColor clearColor];
+        cell.coinView.hidden = YES;
     }
     //[cell.image setImage:checker.image];
     
@@ -86,6 +99,7 @@ static NSString * const reuseIdentifier = @"CustomCell";
             self.isEvenCheckPlayable = FALSE;
         }
     }
+    
     return cell;
 }
 
@@ -110,12 +124,14 @@ static NSString * const reuseIdentifier = @"CustomCell";
     return NO;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath didMoveToIndexPath:(NSIndexPath *)toIndexPath;{
-    Checker *fromChecker = [self.checkerObjects objectAtIndex:fromIndexPath.row + fromIndexPath.section  * 8];
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath didMoveToIndexPath:(NSIndexPath *)toIndexPath {
+    Checker *fromChecker = [self.checkerObjects objectAtIndex:(fromIndexPath.row + fromIndexPath.section  * 8)];
     fromChecker.containsCoin = FALSE;
-    Checker *toChecker = [self.checkerObjects objectAtIndex:toIndexPath.row + toIndexPath.section  * 8];
+    
+    Checker *toChecker = [self.checkerObjects objectAtIndex:(toIndexPath.row + toIndexPath.section  * 8) ];
     toChecker.containsCoin = TRUE;
-    //[self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects:fromIndexPath, toIndexPath, nil]];
+    toChecker.checkerPlayer = fromChecker.checkerPlayer;
+    fromChecker.checkerPlayer = 0;
     [self.collectionView reloadData];
 }
 
