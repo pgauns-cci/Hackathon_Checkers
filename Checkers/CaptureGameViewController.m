@@ -21,7 +21,9 @@
 @interface CaptureGameViewController ()<StaticPictureTableViewControllerDelegate>
 
 // Properties
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, strong) IBOutlet UIButton *resetButton;
+@property (nonatomic, strong) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic, strong) CaptureSessionManager *captureManager;
 @property (nonatomic, strong) IBOutlet UIView *containerView;
 @property (nonatomic, strong) IBOutlet UILabel *infoLabel;
@@ -34,6 +36,7 @@
 // IBActions
 - (IBAction)handleSingleTapGesture:(id)sender;
 - (IBAction)nextButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)resetButtonTapped:(UIButton *)sender;
 
 // Private Methods
 - (void)configureCaptureManager;
@@ -54,6 +57,21 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    self.resetButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.resetButton.layer.borderWidth = 4.0f;
+    self.resetButton.layer.cornerRadius = 20.0f;
+    
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
+    shapeLayer.frame = self.resetButton.bounds;
+    shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+    shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.resetButton.bounds cornerRadius:20.0f].CGPath;
+    shapeLayer.fillColor = [UIColor redColor].CGColor;
+    
+    [self.resetButton.layer setMask:shapeLayer];
+    
+    
+    
+
     
     [self configureCaptureManager];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -128,7 +146,12 @@
         self.checkerboardImageView.hidden = YES;
         
         // Change text on the label
-        self.infoLabel.text = @"Tap to capture";
+//        self.infoLabel.text = @"Tap to capture";
+        
+        self.infoLabel.hidden = NO;
+        self.resetButton.hidden = YES;
+        self.tapGestureRecognizer.enabled = YES;
+        
         [self.arrayOfCheckerObjects removeAllObjects];
         self.arrayOfCheckerObjects = nil;
     } else {
@@ -136,7 +159,11 @@
         [self saveCapturedImage];
         
         // Change text on the label
-        self.infoLabel.text = @"Reset";
+        self.infoLabel.hidden = YES;
+//        self.infoLabel.text = @"Reset";
+        self.tapGestureRecognizer.enabled = NO;
+        
+        self.resetButton.hidden = NO;
     }
 }
 
@@ -155,6 +182,10 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Please capture or choose an image" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
+}
+
+- (IBAction)resetButtonTapped:(UIButton *)sender {
+    self.isCapturingGame = !self.isCapturingGame;
 }
 
 #pragma mark - Private Methods

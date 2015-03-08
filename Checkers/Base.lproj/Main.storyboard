@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="GoH-jE-7kp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="GoH-jE-7kp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -57,6 +57,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAJ-Pk-LA0">
+                                <rect key="frame" x="297" y="920" width="175" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Jcl-yx-UFV"/>
+                                    <constraint firstAttribute="width" constant="175" id="opE-fT-dcL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                <state key="normal" title="Reset" backgroundImage="reset_background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Reset" backgroundImage="reset_background"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="Ptc-80-gjP" eventType="touchUpInside" id="2f0-jn-yEF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -70,10 +87,12 @@
                             <constraint firstItem="spr-bp-XKD" firstAttribute="top" secondItem="b3A-vR-Lcx" secondAttribute="bottom" id="81m-4A-Qrs"/>
                             <constraint firstAttribute="centerX" secondItem="aCU-PS-ZXV" secondAttribute="centerX" id="92L-bo-2QS"/>
                             <constraint firstItem="EHz-sU-OYf" firstAttribute="top" secondItem="1sT-jR-35l" secondAttribute="top" id="D3M-me-4VR"/>
+                            <constraint firstAttribute="centerX" secondItem="QAJ-Pk-LA0" secondAttribute="centerX" id="Fol-pr-0DN"/>
                             <constraint firstAttribute="trailing" secondItem="b3A-vR-Lcx" secondAttribute="trailing" id="I3L-hh-krx"/>
                             <constraint firstItem="b3A-vR-Lcx" firstAttribute="leading" secondItem="1sT-jR-35l" secondAttribute="leading" id="KOJ-cm-K97"/>
                             <constraint firstItem="7Av-fa-TXv" firstAttribute="top" secondItem="RiW-up-RpJ" secondAttribute="bottom" constant="90" id="MOh-Om-P9x"/>
                             <constraint firstItem="7Av-fa-TXv" firstAttribute="leading" secondItem="1sT-jR-35l" secondAttribute="leading" constant="34" id="N1e-WT-1H1"/>
+                            <constraint firstItem="spr-bp-XKD" firstAttribute="top" secondItem="QAJ-Pk-LA0" secondAttribute="bottom" constant="51" id="Vfq-Qb-Tx8"/>
                             <constraint firstItem="spr-bp-XKD" firstAttribute="top" secondItem="EHz-sU-OYf" secondAttribute="bottom" id="ecW-ER-TIP"/>
                             <constraint firstItem="EHz-sU-OYf" firstAttribute="leading" secondItem="1sT-jR-35l" secondAttribute="leading" id="jLH-5x-Aaf"/>
                             <constraint firstAttribute="centerX" secondItem="RD5-mZ-I2f" secondAttribute="centerX" constant="-0.5" id="jVl-Ek-R6z"/>
@@ -106,6 +125,8 @@
                         <outlet property="containerView" destination="b3A-vR-Lcx" id="Zu0-dK-TRf"/>
                         <outlet property="gridView" destination="H1Z-9z-S6h" id="MrG-ue-pih"/>
                         <outlet property="infoLabel" destination="hWB-qK-2pQ" id="yod-Fn-SQY"/>
+                        <outlet property="resetButton" destination="QAJ-Pk-LA0" id="6lf-Fp-mDH"/>
+                        <outlet property="tapGestureRecognizer" destination="lDw-vZ-7bm" id="2PA-ZC-WEs"/>
                         <segue destination="T0q-ab-gOl" kind="push" identifier="GameViewSegue" id="bDF-r9-tvU"/>
                     </connections>
                 </viewController>
@@ -117,7 +138,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1200.6400000000001" y="629.75999999999999"/>
+            <point key="canvasLocation" x="1200" y="629"/>
         </scene>
         <!--Static Picture Table View Controller-->
         <scene sceneID="c40-BV-CTK">
@@ -377,6 +398,7 @@
         <image name="CheckerBoard_light.png" width="700" height="700"/>
         <image name="background" width="1024" height="768"/>
         <image name="frame" width="500" height="500"/>
+        <image name="reset_background" width="175" height="53"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
