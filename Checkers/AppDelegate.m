@@ -26,7 +26,7 @@
     navigationBar.titleTextAttributes = settings;
     navigationBar.tintColor = [UIColor whiteColor];
     
-    self.staticPictures = [NSArray arrayWithObjects:@"CheckerBoard_light", @"CheckerBoard1", @"CheckerBoard2", nil];
+    self.staticPictures = [NSArray arrayWithObjects:@"CheckerBoard1", @"CheckerBoard2", @"CheckerBoard3", nil];
     return YES;
 }
 

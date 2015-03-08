@@ -18,7 +18,7 @@
 		3C23EAEF1AAAC1530090EFD0 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEB1AAAC1530090EFD0 /* UIImage+Blend.m */; };
 		3C23EAF01AAAC1530090EFD0 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */; };
 		3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */; };
-		3C23EAF41AAAC1900090EFD0 /* CheckerBoard_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */; };
+		3C23EAF41AAAC1900090EFD0 /* CheckerBoard3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EAF21AAAC1900090EFD0 /* CheckerBoard3.png */; };
 		3C23EAFA1AAAC23A0090EFD0 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAF91AAAC23A0090EFD0 /* Common.m */; };
 		3C23EAFE1AAAC4470090EFD0 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EAFD1AAAC4470090EFD0 /* CaptureSessionManager.m */; };
 		3C23EB041AAAC5120090EFD0 /* Checker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB031AAAC5120090EFD0 /* Checker.m */; };
@@ -30,6 +30,7 @@
 		3C23EB331AABFE2B0090EFD0 /* StaticPictureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C23EB321AABFE2B0090EFD0 /* StaticPictureTableViewController.m */; };
 		3C23EB351AAC0AE10090EFD0 /* CheckerBoard1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB341AAC0AE10090EFD0 /* CheckerBoard1.png */; };
 		3C23EB391AAC46440090EFD0 /* CheckerBoard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB381AAC46440090EFD0 /* CheckerBoard2.png */; };
+		3C23EB3B1AAC4E480090EFD0 /* CheckerBoard4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C23EB3A1AAC4E480090EFD0 /* CheckerBoard4.png */; };
 		3CB204FA1AA9D43400429A05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204F91AA9D43400429A05 /* main.m */; };
 		3CB204FD1AA9D43400429A05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FC1AA9D43400429A05 /* AppDelegate.m */; };
 		3CB205001AA9D43400429A05 /* CaptureGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB204FF1AA9D43400429A05 /* CaptureGameViewController.m */; };
@@ -71,7 +72,7 @@
 		3C23EAED1AAAC1530090EFD0 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
 		3C23EAEE1AAAC1530090EFD0 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
 		3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard_dark.png; sourceTree = "<group>"; };
-		3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard_light.png; sourceTree = "<group>"; };
+		3C23EAF21AAAC1900090EFD0 /* CheckerBoard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard3.png; sourceTree = "<group>"; };
 		3C23EAF81AAAC23A0090EFD0 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		3C23EAF91AAAC23A0090EFD0 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		3C23EAFC1AAAC4470090EFD0 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 		3C23EB321AABFE2B0090EFD0 /* StaticPictureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticPictureTableViewController.m; sourceTree = "<group>"; };
 		3C23EB341AAC0AE10090EFD0 /* CheckerBoard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard1.png; sourceTree = "<group>"; };
 		3C23EB381AAC46440090EFD0 /* CheckerBoard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard2.png; sourceTree = "<group>"; };
+		3C23EB3A1AAC4E480090EFD0 /* CheckerBoard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckerBoard4.png; sourceTree = "<group>"; };
 		3CB204F41AA9D43400429A05 /* Checkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB204F81AA9D43400429A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CB204F91AA9D43400429A05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -173,10 +175,11 @@
 		3C23EAF51AAAC19B0090EFD0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3C23EB3A1AAC4E480090EFD0 /* CheckerBoard4.png */,
 				3C23EB381AAC46440090EFD0 /* CheckerBoard2.png */,
 				3C23EB341AAC0AE10090EFD0 /* CheckerBoard1.png */,
 				3C23EAF11AAAC1900090EFD0 /* CheckerBoard_dark.png */,
-				3C23EAF21AAAC1900090EFD0 /* CheckerBoard_light.png */,
+				3C23EAF21AAAC1900090EFD0 /* CheckerBoard3.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -399,8 +402,9 @@
 				3C23EB391AAC46440090EFD0 /* CheckerBoard2.png in Resources */,
 				3CB205031AA9D43400429A05 /* Main.storyboard in Resources */,
 				3CB205081AA9D43400429A05 /* LaunchScreen.xib in Resources */,
+				3C23EB3B1AAC4E480090EFD0 /* CheckerBoard4.png in Resources */,
 				3C23EAF31AAAC1900090EFD0 /* CheckerBoard_dark.png in Resources */,
-				3C23EAF41AAAC1900090EFD0 /* CheckerBoard_light.png in Resources */,
+				3C23EAF41AAAC1900090EFD0 /* CheckerBoard3.png in Resources */,
 				3CB205051AA9D43400429A05 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
